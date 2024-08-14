@@ -138,7 +138,8 @@ CREATE TABLE IF NOT EXISTS user_media (
 INSERT INTO users (user_id, name, email, profile_bio, phone_number, city, state, country)
 VALUES (1, 'John', 'j@gmail.com', 'book enjoyer', 1234567890, 'Boston', 'MA', 'USA'),
                (2, 'Bob', 'b@gmail.com', 'movie enjoyer', 5678901234, 'Arlington', 'MA', 'USA'),
-               (3, 'Ron', 'r@gmail.com', 'picture enjoyer', 9012345678, 'Medford', 'MA', 'USA');
+               (3, 'Ron', 'r@gmail.com', 'picture enjoyer', 9012345678, 'Medford', 'MA', 'USA'),
+               (4, 'Rahul', 'rs@gmail.com', 'journalist', 9012345679, 'Canton', 'MA', 'USA');
 
 
 INSERT INTO media (media_id)
@@ -165,5 +166,6 @@ VALUES (2, 1), (3, 2), (7, 3);
 
 INSERT INTO user_media (media_id, user_id)
 VALUES (2, 1), (3, 2), (7, 2);
+
 
 
