@@ -136,10 +136,14 @@ CREATE TABLE IF NOT EXISTS user_media (
 
 # Insert Statements
 INSERT INTO users (user_id, name, email, profile_bio, phone_number, city, state, country)
-VALUES (1, 'John', 'j@gmail.com', 'book enjoyer', 1234567890, 'Boston', 'MA', 'USA'),
-               (2, 'Bob', 'b@gmail.com', 'movie enjoyer', 5678901234, 'Arlington', 'MA', 'USA'),
-               (3, 'Ron', 'r@gmail.com', 'picture enjoyer', 9012345678, 'Medford', 'MA', 'USA'),
-               (4, 'Rahul', 'rs@gmail.com', 'journalist', 9012345679, 'Canton', 'MA', 'USA');
+VALUES (1, 'John Doe', 'j@gmail.com', 'book enjoyer', 1234567890, 'Boston', 'MA', 'USA'),
+(2, 'Bob Myers', 'b@gmail.com', 'movie enjoyer', 5678901234, 'Arlington', 'MA', 'USA'),
+(3, 'Ron Washington', 'r@gmail.com', 'picture enjoyer', 9012345678, 'Medford', 'MA', 'USA'),
+(4, 'Rahul Shah', 'rs@gmail.com', 'journalist', 9012345679, 'Canton', 'MA', 'USA'),
+(5, 'Sara Smith', 'ss@gmail.com', 'movie enjoyer', 8882345679, 'Dallas', 'TX', 'USA'),
+(6, 'Barbara Brown', 'barbara@gmail.com', 'book enjoyer', 9992345679, 'Seattle', 'WA', 'USA');
+
+
 
 
 INSERT INTO media (media_id)
