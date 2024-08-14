@@ -15,11 +15,11 @@ st.write("# Accessing a REST API from Within Streamlit")
 #except:
 #  st.write("Could not connect to database to get media ids")
 
-customers = requests.get('http://api:4000/c/customers').json()
+products = requests.get('http://api:4000/p/products').json()
 try:
-  st.dataframe(customers)
+  st.dataframe(products)
 except:
-  st.write("Could not connect to database to get customers")
+  st.write("Could not connect to database to get products")
 
 #users = requests.get('http://api:4000/u/users').json()
 #try:
@@ -34,6 +34,7 @@ If the container isn't running, this will be very unhappy.  But the Streamlit ap
 should not totally die. 
 """
 '''
+
 data = {} 
 try:
   data = requests.get('http://api:4000/data').json()
