@@ -9,13 +9,7 @@ SideBarLinks()
 
 st.write("# Accessing a REST API from Within Streamlit")
 
-st.write("Test")
-#media_ids = requests.get('http://api:4000/mids/media_ids').json()
-#try:
-#  st.dataframe(media_ids)
-#except:
-#  st.write("Could not connect to database to get media ids")
-
+st.write("Users")
 
 users = requests.get('http://api:4000/u/users').json()
 try:
