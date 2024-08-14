@@ -73,8 +73,6 @@ if st.button('Act as System Administrator',
     st.session_state['first_name'] = 'SysAdmin'
     st.switch_page('pages/20_Admin_Home.py')
 
-<<<<<<< HEAD
-=======
 if st.button('Act as Rahul Shah, a Journalist', 
             type = 'primary', 
             use_container_width=True):
@@ -83,6 +81,5 @@ if st.button('Act as Rahul Shah, a Journalist',
     st.session_state['first_name'] = 'Rahul'
     st.switch_page('pages/Journalist_Home.py')
 
->>>>>>> 596db14f6e0ab1e8c75fdfc2337016f912366189
 
 
