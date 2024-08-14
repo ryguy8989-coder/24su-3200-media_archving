@@ -34,7 +34,7 @@ SideBarLinks(show_home=True)
 
 # set the title of the page and provide a simple prompt. 
 logger.info("Loading the Home page of the app")
-st.title('The Profs App')
+st.title('The Media Archiving App')
 st.write('\n\n')
 st.write('### HI! As which user would you like to log in?')
 
@@ -42,7 +42,7 @@ st.write('### HI! As which user would you like to log in?')
 # functionality, we put a button on the screen that the user 
 # can click to MIMIC logging in as that mock user. 
 
-if st.button("Act as John, a Political Strategy Advisor", 
+if st.button("Act as Bob, a Political Strategy Advisor", 
             type = 'primary', 
             use_container_width=True):
     # when user clicks the button, they are now considered authenticated
