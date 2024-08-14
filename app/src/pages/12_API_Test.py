@@ -8,24 +8,27 @@ from modules.nav import SideBarLinks
 SideBarLinks()
 
 st.write("# Accessing a REST API from Within Streamlit")
-#st.write("Test")
+
+st.write("Test")
 #media_ids = requests.get('http://api:4000/mids/media_ids').json()
 #try:
 #  st.dataframe(media_ids)
 #except:
 #  st.write("Could not connect to database to get media ids")
 
-products = requests.get('http://api:4000/p/products').json()
-try:
-  st.dataframe(products)
-except:
-  st.write("Could not connect to database to get products")
 
-#users = requests.get('http://api:4000/u/users').json()
+users = requests.get('http://api:4000/u/users').json()
+try:
+  st.dataframe(users)
+except:
+  st.write("Could not connect to database to get users")
+
+#If you want to run this, change DB_name in .env
+#products = requests.get('http://api:4000/p/products').json()
 #try:
-#  st.dataframe(users)
+#  st.dataframe(products)
 #except:
-#  st.write("Could not connect to database to get users")
+#  st.write("Could not connect to database to get products")
 
 """
 Simply retrieving data from a REST api running in a separate Docker Container.

@@ -51,7 +51,7 @@ if st.button("Act as Sara, a Movie Enjoyer",
     st.session_state['role'] = 'pol_strat_advisor'
     # we add the first name of the user (so it can be displayed on 
     # subsequent pages). 
-    st.session_state['first_name'] = 'John'
+    st.session_state['first_name'] = 'Sara'
     # finally, we ask streamlit to switch to another page, in this case, the 
     # landing page for this particular user type
     logger.info("Logging in as Political Strategy Advisor Persona")
