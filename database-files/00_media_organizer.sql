@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users
   registration_date DATE,
   last_seen DATE,
   date_of_birth DATE,
-  phone_number VARCHAR(11),
+  phone_number VARCHAR(20),
   city VARCHAR(50),
   state VARCHAR(50),
   country VARCHAR(50)
@@ -130,43 +130,3 @@ CREATE TABLE IF NOT EXISTS user_media (
   FOREIGN KEY (media_id) REFERENCES media(media_id)
      ON UPDATE CASCADE ON DELETE CASCADE
   );
-
-
-# Insert Statements
-INSERT INTO users (user_id, name, email, profile_bio, phone_number, city, state, country)
-VALUES (1, 'John Doe', 'j@gmail.com', 'book enjoyer', 1234567890, 'Boston', 'MA', 'USA'),
-(2, 'Bob Myers', 'b@gmail.com', 'movie enjoyer', 5678901234, 'Arlington', 'MA', 'USA'),
-(3, 'Ron Washington', 'r@gmail.com', 'picture enjoyer', 9012345678, 'Medford', 'MA', 'USA'),
-(4, 'Rahul Shah', 'rs@gmail.com', 'journalist', 9012345679, 'Canton', 'MA', 'USA'),
-(5, 'Sara Smith', 'ss@gmail.com', 'movie enjoyer', 8882345679, 'Dallas', 'TX', 'USA'),
-(6, 'Barbara Brown', 'barbara@gmail.com', 'book enjoyer', 9992345679, 'Seattle', 'WA', 'USA');
-
-
-
-
-INSERT INTO media (media_id)
-VALUES (1),(2),(3),(4),(5),(6),(7);
-
-INSERT INTO media_videos (id, description, video_type, name, quality, genre, director)
-VALUES (1, 'second batman movie', 'Movie', 'The Dark Knight Rises', 'HD', 'Action', 'Nolan'),
-               (2, 'mafia show', 'Show', 'Sopranos', 'HD','Drama','Chase');
-
-INSERT INTO media_literature (id, description, author, title, genre, page_count, type)
-VALUES (3, 'The second one', 'Rowling', 'The Chamber of Secrets', 'Fantasy', 231, 'book'),
-      (4, 'The sixth one', 'Rowling', 'The half-blood prince', 'Fantasy', 451, 'book'),
-   (5, 'The seventh one', 'Rowling', 'The deathly hallows', 'Fantasy', 751, 'book');
-
-INSERT INTO media_images(id, image_type, photographer, title, resolution, file_format)
-VALUES (6, 'Nature', 'Doe', 'Lilies in Bloom', '1080x720', 'png'),
-   (7, 'Selfie', 'Moe', 'Pic on the Tower', '1080x720', 'jpg');
-
-INSERT INTO tags (tag_name)
-VALUES ('Mafia'), ('Magic'), ('Masterpiece');
-
-INSERT INTO media_tags (media_id, tag_id)
-VALUES (2, 1), (3, 2), (7, 3);
-
-INSERT INTO user_media (media_id, user_id)
-VALUES (2, 1), (3, 2), (7, 2);
-
-DESCRIBE tags;
