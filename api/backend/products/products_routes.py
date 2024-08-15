@@ -20,21 +20,21 @@ def get_products():
     cursor.execute('SELECT id, product_code, product_name, list_price, category FROM products')
 
     # grab the column headers from the returned data
-    column_headers = [x[0] for x in cursor.description]
+    # column_headers = [x[0] for x in cursor.description]
 
     # create an empty dictionary object to use in 
     # putting column headers together with data
-    json_data = []
+    # json_data = []
 
     # fetch all the data from the cursor
     theData = cursor.fetchall()
 
     # for each of the rows, zip the data elements together with
     # the column headers. 
-    for row in theData:
-        json_data.append(dict(zip(column_headers, row)))
+    # for row in theData:
+    #     json_data.append(dict(zip(column_headers, row)))
 
-    return jsonify(json_data)
+    return jsonify(theData)
 
 @products.route('/product/<id>', methods=['GET'])
 def get_product_detail (id):

@@ -26,6 +26,8 @@ def GetVideos():
 def ApiTestNav():
     st.sidebar.page_link("pages/12_API_Test.py", label="Test the API", icon='🛜')
 
+def NewTagNav():
+    st.sidebar.page_link("pages/14_Create_New_Tag.py",label="Add a New Tag", icon='🖥️')
 
 def PredictionNav():
     st.sidebar.page_link("pages/11_Prediction.py", label="Regression Prediction", icon='📈')
@@ -69,20 +71,24 @@ def SideBarLinks(show_home=False):
         if st.session_state['role'] == 'pol_strat_advisor':
             PolStratAdvHomeNav()
             WorldBankVizNav()
+            NewTagNav()
             MapDemoNav()
 
         # If the user role is usaid worker, show the Api Testing page
         if st.session_state['role'] == 'usaid_worker':
             PredictionNav()
             ApiTestNav() 
+            NewTagNav()
             ClassificationNav()
         
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state['role'] == 'administrator':
             AdminPageNav()
+            NewTagNav()
         
         if st.session_state['role'] == 'journalist':
             JournalistPageNav()
+            NewTagNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()

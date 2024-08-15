@@ -20,3 +20,8 @@ if st.button('Get All Users',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/22_Get_Users.py')
+  
+if st.button("Create a New Tag",
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/14_Create_New_Tag.py')

@@ -26,17 +26,15 @@ CREATE TABLE IF NOT EXISTS users
 # Tags Table
 CREATE TABLE IF NOT EXISTS tags
 (
-  tag_id INT PRIMARY KEY,
+  tag_id INT AUTO_INCREMENT PRIMARY KEY,
   tag_name VARCHAR(255) NOT NULL,
   INDEX idx_tag_name (tag_name)
 );
-
 
 # Media Table
 CREATE TABLE IF NOT EXISTS media (
    media_id INT PRIMARY KEY
 );
-
 
 # Media Images Table
 CREATE TABLE IF NOT EXISTS media_images (
@@ -162,8 +160,8 @@ INSERT INTO media_images(id, image_type, photographer, title, resolution, file_f
 VALUES (6, 'Nature', 'Doe', 'Lilies in Bloom', '1080x720', 'png'),
    (7, 'Selfie', 'Moe', 'Pic on the Tower', '1080x720', 'jpg');
 
-INSERT INTO tags (tag_id, tag_name)
-VALUES (1, 'Mafia'), (2, 'Magic'), (3, 'Masterpiece');
+INSERT INTO tags (tag_name)
+VALUES ('Mafia'), ('Magic'), ('Masterpiece');
 
 INSERT INTO media_tags (media_id, tag_id)
 VALUES (2, 1), (3, 2), (7, 3);
@@ -171,5 +169,4 @@ VALUES (2, 1), (3, 2), (7, 3);
 INSERT INTO user_media (media_id, user_id)
 VALUES (2, 1), (3, 2), (7, 2);
 
-
-
+DESCRIBE tags;
