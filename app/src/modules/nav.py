@@ -81,6 +81,7 @@ def SideBarLinks(show_home=False):
         if st.session_state['role'] == 'administrator':
             AdminPageNav()
         
+        # If the user is an journalist, give them access to the journalist pages
         if st.session_state['role'] == 'journalist':
             JournalistPageNav()
 
