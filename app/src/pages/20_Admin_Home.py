@@ -15,3 +15,8 @@ if st.button('Update ML Models',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/21_ML_Model_Mgmt.py')
+
+if st.button('Get All Users', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/22_Get_Users.py')
