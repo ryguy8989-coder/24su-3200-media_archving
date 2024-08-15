@@ -11,7 +11,7 @@ lit= Blueprint('lit', __name__)
 def get_all_media_literature():
     cursor = db.get_db().cursor()
     query = '''
-     SELECT * FROM media literature  
+     SELECT * FROM media_literature  
 '''
     cursor.execute(query)
     theData = cursor.fetchall()

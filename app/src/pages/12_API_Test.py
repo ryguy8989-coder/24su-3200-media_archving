@@ -2,20 +2,20 @@ import logging
 logger = logging.getLogger(__name__)
 import streamlit as st
 import requests
-from streamlit_extras.app_logo import add_logo
+#from streamlit_extras.app_logo import add_logo
 from modules.nav import SideBarLinks
 
 SideBarLinks()
 
-st.write("# Accessing a REST API from Within Streamlit")
+st.write("# Here is all the Literature in Our Database")
 
-st.write("Users")
+st.write("All Literature")
 
-users = requests.get('http://api:4000/u/users').json()
+lit = requests.get('http://api:4000/l/lit').json()
 try:
-  st.dataframe(users)
+  st.dataframe(lit)
 except:
-  st.write("Could not connect to database to get users")
+  st.write("Could not connect to database to get literature")
 
 #If you want to run this, change DB_name in .env
 #products = requests.get('http://api:4000/p/products').json()
