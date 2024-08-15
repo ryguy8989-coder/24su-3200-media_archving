@@ -12,7 +12,7 @@ videos= Blueprint('videos', __name__)
 
 # Make route
 @videos.route('/videos', methods=['GET'])
-def get_all_employees():
+def get_all_videos():
     cursor = db.get_db().cursor()
     query = '''
      SELECT * FROM media_videos 

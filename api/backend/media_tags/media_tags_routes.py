@@ -8,11 +8,11 @@ from backend.db_connection import db
 from backend.ml_models.model01 import predict
 
 # make blueprint object
-media_tags= Blueprint('tags', __name__)
+media_tags= Blueprint('media_tags', __name__)
 
 # Make route
 @media_tags.route('/media_tags', methods=['GET'])
-def get_all_tags():
+def get_all_media_tags():
     cursor = db.get_db().cursor()
     query = '''
      SELECT * FROM media_tags 
