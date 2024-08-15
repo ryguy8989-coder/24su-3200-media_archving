@@ -19,9 +19,13 @@ def WorldBankVizNav():
 def MapDemoNav():
     st.sidebar.page_link("pages/02_Map_Demo.py", label="Map Demonstration", icon='🗺️')
 
+def GetVideos():
+    st.sidebar.page_link("pages/04_Get_Videos.py", label="Get Videos", icon='🗺️')
+
 ## ------------------------ Examples for Role of usaid_worker ------------------------
 def ApiTestNav():
     st.sidebar.page_link("pages/12_API_Test.py", label="Test the API", icon='🛜')
+
 
 def PredictionNav():
     st.sidebar.page_link("pages/11_Prediction.py", label="Regression Prediction", icon='📈')
