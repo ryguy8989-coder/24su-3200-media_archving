@@ -114,6 +114,8 @@ def create_app():
     app.register_blueprint(user_media, url_prefix = '/um')
     app.register_blueprint(media_tags, url_prefix = '/mt')
     app.register_blueprint(images, url_prefix = '/i')
+    app.register_blueprint(lit, url_prefix = '/l')
+
 
 
     # Don't forget to return the app object
