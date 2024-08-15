@@ -1,5 +1,5 @@
 ########################################################
-# Sample iamges blueprint of endpoints
+# Sample tags blueprint of endpoints
 # Remove this file if you are not using it in your project
 ########################################################
 from flask import Blueprint, request, jsonify, make_response, current_app
@@ -8,14 +8,14 @@ from backend.db_connection import db
 from backend.ml_models.model01 import predict
 
 # make blueprint object
-images = Blueprint('images', __name__)
+tags= Blueprint('tags', __name__)
 
 # Make route
-@images.route('/images', methods=['GET'])
-def get_all_images():
+@tags.route('/tags', methods=['GET'])
+def get_all_tags():
     cursor = db.get_db().cursor()
     query = '''
-     SELECT * FROM media_images   
+     SELECT * FROM tags 
 
 '''
     cursor.execute(query)

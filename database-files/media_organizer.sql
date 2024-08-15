@@ -153,10 +153,10 @@ INSERT INTO media_videos (id, description, video_type, name, quality, genre, dir
 VALUES (1, 'second batman movie', 'Movie', 'The Dark Knight Rises', 'HD', 'Action', 'Nolan'),
                (2, 'mafia show', 'Show', 'Sopranos', 'HD','Drama','Chase');
 
-INSERT INTO media_literature (id, description, author, title, genre, page_count)
-VALUES (3, 'The second one', 'Rowling', 'The Chamber of Secrets', 'Fantasy', 231),
-      (4, 'The sixth one', 'Rowling', 'The half-blood prince', 'Fantasy', 451),
-   (5, 'The seventh one', 'Rowling', 'The deathly hallows', 'Fantasy', 751);
+INSERT INTO media_literature (id, description, author, title, genre, page_count, type)
+VALUES (3, 'The second one', 'Rowling', 'The Chamber of Secrets', 'Fantasy', 231, 'book'),
+      (4, 'The sixth one', 'Rowling', 'The half-blood prince', 'Fantasy', 451, 'book'),
+   (5, 'The seventh one', 'Rowling', 'The deathly hallows', 'Fantasy', 751, 'book');
 
 INSERT INTO media_images(id, image_type, photographer, title, resolution, file_format)
 VALUES (6, 'Nature', 'Doe', 'Lilies in Bloom', '1080x720', 'png'),

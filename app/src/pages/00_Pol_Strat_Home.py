@@ -23,3 +23,8 @@ if st.button('View World Map Demo',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/02_Map_Demo.py')
+
+if st.button('See all Videos', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/04_Get_Videos.py')
