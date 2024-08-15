@@ -10,6 +10,7 @@ from backend.employees.employee_routes import employees
 from backend.media_ids.media_id_routes import media_ids
 from backend.users.user_routes import users
 from backend.media_images import images
+from backend.media_tags import tags
 import os
 from dotenv import load_dotenv
 
@@ -103,6 +104,7 @@ def create_app():
     app.register_blueprint(media_ids, url_prefix = '/mids')
     app.register_blueprint(users, url_prefix = '/u')
     app.register_blueprint(images, url_prefix = '/i')
+    app.register_blueprint(tags, url_prefix = '/q')
 
 
     # Don't forget to return the app object
