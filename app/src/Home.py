@@ -57,7 +57,7 @@ if st.button("Act as Sara, a Movie Enjoyer",
     logger.info("Logging in as Political Strategy Advisor Persona")
     st.switch_page('pages/00_Pol_Strat_Home.py')
 
-if st.button('Act as Barbara, a book enjoyer', 
+if st.button('Act as Barbara, a Book Enjoyer', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
