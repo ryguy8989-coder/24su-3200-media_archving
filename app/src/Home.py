@@ -77,7 +77,7 @@ if st.button('Act as Rahul Shah, Journalist',
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'administrator'
+    st.session_state['role'] = 'journalist'
     st.session_state['first_name'] = 'Rahul'
     st.switch_page('pages/40_Journalist_Home.py')
 

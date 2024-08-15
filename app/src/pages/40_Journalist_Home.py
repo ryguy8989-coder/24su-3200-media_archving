@@ -17,4 +17,5 @@ st.write('### What would you like to do today?')
 if st.button('Get All Images', 
              type='primary',
              use_container_width=True):
-  st.switch_page('pages/22_Get_Images.py')
+  st.switch_page('pages/41_Get_Images.py')
+  

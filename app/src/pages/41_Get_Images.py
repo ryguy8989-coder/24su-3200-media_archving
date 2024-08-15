@@ -9,7 +9,7 @@ SideBarLinks()
 
 st.write("# Here is all the Images in Our Database")
 
-st.write("All Videos")
+st.write("All Images")
 
 images = requests.get('http://api:4000/i/images').json()
 try:
