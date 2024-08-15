@@ -39,6 +39,10 @@ def AdminPageNav():
     st.sidebar.page_link("pages/21_ML_Model_Mgmt.py", label='ML Model Management', icon='🏢')
     st.sidebar.page_link("pages/22_Get_Users.py", label='Get all Users', icon='🏢')
 
+#### ------------------------ System Admin Role ------------------------
+def JournalistPageNav():
+    st.sidebar.page_link("pages/40_Journalist_Home.py", label="Journalist", icon='🖥️')
+    st.sidebar.page_link("pages/41_Get_Images.py", label="Get All Images", icon='🖥️')
 
 # --------------------------------Links Function -----------------------------------------------
 def SideBarLinks(show_home=False):
@@ -76,6 +80,9 @@ def SideBarLinks(show_home=False):
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state['role'] == 'administrator':
             AdminPageNav()
+        
+        if st.session_state['role'] == 'journalist':
+            JournalistPageNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()

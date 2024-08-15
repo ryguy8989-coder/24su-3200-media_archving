@@ -13,3 +13,8 @@ st.title(f"Welcome Journalist, {st.session_state['first_name']}.")
 st.write('')
 st.write('')
 st.write('### What would you like to do today?')
+
+if st.button('Get All Images', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/22_Get_Images.py')
