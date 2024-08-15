@@ -12,10 +12,7 @@ from backend.users.user_routes import users
 from backend.media_images.media_images_routes import images
 from backend.media_videos.media_videos_routes import videos
 from backend.tags.tags_routes import tags
-from backend.user_media.user_media_routes import user_media
-from backend.media_tags.media_tags_routes import media_tags
 from backend.media_literature.media_literature_routes import lit
-
 
 import os
 from dotenv import load_dotenv
@@ -111,8 +108,6 @@ def create_app():
     app.register_blueprint(users, url_prefix = '/u')
     app.register_blueprint(videos, url_prefix = '/v')
     app.register_blueprint(tags, url_prefix = '/t' )
-    app.register_blueprint(user_media, url_prefix = '/um')
-    app.register_blueprint(media_tags, url_prefix = '/mt')
     app.register_blueprint(images, url_prefix = '/i')
     app.register_blueprint(lit, url_prefix = '/l')
 
