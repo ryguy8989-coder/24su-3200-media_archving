@@ -29,7 +29,7 @@ with st.form("Create a New Tag"):
         data['tag_name'] = tag_name
         # st.write(data)
         requests.post('http://api:4000/t/tags', json=data)
-        response = requests.post('http://api:4000/t/tags', json=data)
+        #response = requests.post('http://api:4000/t/tags', json=data)
         st.success(f"Tag '{tag_name}' has been successfully created!")
         
 
