@@ -19,7 +19,7 @@ if st.button('Get All Images',
              use_container_width=True):
   st.switch_page('pages/41_Get_Images.py')
 
-if st.button('Add Media', 
+if st.button('Add Media to List', 
              type='primary',
              use_container_width=True):
   st.switch_page('pages/51_Insert_User_Media.py')
