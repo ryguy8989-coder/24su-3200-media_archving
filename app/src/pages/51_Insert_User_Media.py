@@ -1,42 +1,38 @@
 import streamlit as st
 import requests
 
-def fetch_and_display_image_tags():
+def fetch_and_display_image():
     try:
         # Make a GET request to fetch tags from the API
-        tags = requests.get('http://api:4000/t/tags').json()
+        images = requests.get('http://api:4000/i/images').json()
         # Display the tags in a dataframe
-        st.dataframe(tags)
+        st.dataframe(images)
     except Exception as e:
         # Handle errors and display a message
-        st.write(f"Could not connect to the database to get tags: {str(e)}")
+        st.write(f"Could not connect to the database to get images: {str(e)}")
 
 # Call the function to fetch and display tags
-fetch_and_display_literature_tags()
+fetch_and_display_image()
 
-def fetch_and_display_image_tags():
+def fetch_and_display_lit():
     try:
-        # Make a GET request to fetch tags from the API
-        tags = requests.get('http://api:4000/t/tags').json()
-        # Display the tags in a dataframe
-        st.dataframe(tags)
+        lit = requests.get('http://api:4000/l/lit').json()
+        st.dataframe(lit)
     except Exception as e:
         # Handle errors and display a message
-        st.write(f"Could not connect to the database to get tags: {str(e)}")
+        st.write(f"Could not connect to the database to get image: {str(e)}")
 
-fetch_and_display_literature_tags()
+fetch_and_display_lit()
 
-def fetch_and_display_video_tags():
+def fetch_and_display_video():
     try:
-        # Make a GET request to fetch tags from the API
-        tags = requests.get('http://api:4000/t/tags').json()
-        # Display the tags in a dataframe
-        st.dataframe(tags)
+        videos = requests.get('http://api:4000/v/videos').json()
+        st.dataframe(videos)
     except Exception as e:
         # Handle errors and display a message
-        st.write(f"Could not connect to the database to get tags: {str(e)}")
+        st.write(f"Could not connect to the database to get videos: {str(e)}")
 
-fetch_and_display_video_tags()
+fetch_and_display_video()
 
 
 
@@ -47,6 +43,7 @@ with st.form("Add Media"):
     media_id = st.number_input("Media ID (Integer):", min_value=1, step=1, help="The ID of the media you want to add.")
 
     submitted = st.form_submit_button("Submit")
+    
 
     if submitted:
         
