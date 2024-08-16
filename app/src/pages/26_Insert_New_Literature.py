@@ -10,7 +10,7 @@ st.write("# Insert a New Literature Entry")
 
 # Form to input literature details
 with st.form("Insert New Literature"):
-    literature_id = st.number_input("Literature ID (Integer > 200):", min_value=1, step=1, help="Unique identifier for the literature.")
+    literature_id = st.number_input("Literature ID (Integer):", min_value=1, step=1, help="Unique identifier for the literature.")
     description = st.text_area("Description:", help="A brief description of the literature.")
     author = st.text_input("Author:", help="Author of the literature.")
     link = st.text_input("Link:", help="Link to the literature (e.g., online article).")

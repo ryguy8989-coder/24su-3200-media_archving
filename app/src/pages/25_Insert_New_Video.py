@@ -10,7 +10,7 @@ st.write("# Insert a New Video")
 
 # Form to input video details
 with st.form("Insert New Video"):
-    video_id = st.number_input("Video ID (Integer > 200):", min_value=1, step=1, help="Unique identifier for the video.")
+    video_id = st.number_input("Video ID (Integer):", min_value=1, step=1, help="Unique identifier for the video.")
     length = st.number_input("Length (Minutes):", min_value=0, step=1, help="Length of the video in minutes.")
     description = st.text_area("Description:", help="A brief description of the video.")
     video_type = st.text_input("Video Type (e.g., Movie, Series):", help="Type of the video.")

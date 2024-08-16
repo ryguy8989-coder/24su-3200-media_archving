@@ -5,7 +5,7 @@ st.write("# Add a New Media Image")
 
 # Form to input image details
 with st.form("Add Image"):
-    id = st.text_input("ID Number (Integer > 200)")
+    id = st.number_input("Image ID (Integer):", min_value=1, step=1, help="Unique identifier for the image.")
     image_type = st.text_input("Image Type", help="E.g., landscape, portrait, abstract")
     image_link = st.text_input("Image Link", help="URL of the image")
     photographer = st.text_input("Photographer", help="Name of the photographer")
