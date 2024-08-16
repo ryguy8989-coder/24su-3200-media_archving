@@ -22,6 +22,9 @@ def SearchWithGenreNav():
 def GetVideos():
     st.sidebar.page_link("pages/04_Get_Videos.py", label="Get Videos", icon='🗺️')
 
+def UpdateTagNav():
+    st.sidebar.page_link("pages/14_Create_New_Tag.py",label="Add a New Tag", icon='🖥️')
+
 ## ------------------------ Examples for Role of Book Enjoyer ------------------------
 def ApiTestNav():
     st.sidebar.page_link("pages/12_View_Literature.py", label="View all Literature", icon='🛜')
@@ -35,16 +38,22 @@ def NewTagNav():
 def FindLiteratureWithGenreNav():
     st.sidebar.page_link("pages/13_Find_Literature.py", label="Find Literature with Genre", icon='🖥️')
 
+
+
 #### ------------------------ System Admin Role ------------------------
 def AdminPageNav():
     st.sidebar.page_link("pages/20_Admin_Home.py", label="System Admin", icon='🖥️')
     st.sidebar.page_link("pages/43_Find_Images.py", label='Find Images by tag', icon='🏢')
     st.sidebar.page_link("pages/22_Get_Users.py", label='Get all Users', icon='🏢')
     st.sidebar.page_link("pages/23_Trending_Tags.py", label='Get Trending Tags', icon='🏢')
-#### ------------------------ System Admin Role ------------------------
+
+#### ------------------------Journalist Role ------------------------
 def JournalistPageNav():
     st.sidebar.page_link("pages/40_Journalist_Home.py", label="Journalist", icon='🖥️')
     st.sidebar.page_link("pages/41_Get_Images.py", label="Get All Images", icon='🖥️')
+    st.sidebar.page_link("pages/21_Update_Tag.py", label='Get all Users', icon='🏢')
+
+
 
 # --------------------------------Links Function -----------------------------------------------
 def SideBarLinks(show_home=False):
@@ -73,23 +82,27 @@ def SideBarLinks(show_home=False):
             #WorldBankVizNav()
             NewTagNav()
             SearchWithGenreNav()
+            UpdateTagNav()
 
         # If the user role is book enjoyer, show the Api Testing page
         if st.session_state['role'] == 'book_enjoyer':
          #   PredictionNav()
             ApiTestNav() 
-            NewTagNav()
+            #NewTagNav()
             FindLiteratureWithGenreNav()
+            UpdateTagNav()
         
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state['role'] == 'administrator':
             AdminPageNav()
-            NewTagNav()
-        
+            #NewTagNav()
+            UpdateTagNav()
+
         # If the user is an journalist, give them access to the journalist pages
         if st.session_state['role'] == 'journalist':
             JournalistPageNav()
-            NewTagNav()
+            #NewTagNav()
+            UpdateTagNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()

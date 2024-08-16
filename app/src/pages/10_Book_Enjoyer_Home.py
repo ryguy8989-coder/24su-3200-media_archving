@@ -29,3 +29,7 @@ if st.button("Find Literature Based on Tag",
             use_container_width=True):
  st.switch_page('pages/13_Find_Literature.py')
  
+if st.button('Update Tag', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/21_Update_Tag.py')
