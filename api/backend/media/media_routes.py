@@ -4,10 +4,10 @@ from backend.db_connection import db
 from backend.ml_models.model01 import predict
 
 # make blueprint object
-media_ids= Blueprint('media ids', __name__)
+media= Blueprint('media ids', __name__)
 
 # Make route
-@media_ids.route('/media_ids', methods=['GET'])
+@media.route('/media_ids', methods=['GET'])
 def get_all_media_ids():
     cursor = db.get_db().cursor()
     query = '''

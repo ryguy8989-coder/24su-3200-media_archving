@@ -7,7 +7,7 @@ from backend.db_connection import db
 from backend.customers.customer_routes import customers
 from backend.products.products_routes import products
 from backend.employees.employee_routes import employees
-from backend.media_ids.media_id_routes import media_ids
+from backend.media.media_routes import media
 from backend.users.user_routes import users
 from backend.media_images.media_images_routes import images
 from backend.media_videos.media_videos_routes import videos
@@ -104,7 +104,7 @@ def create_app():
     app.register_blueprint(customers,   url_prefix='/c')
     app.register_blueprint(products,    url_prefix='/p')
     app.register_blueprint(employees,    url_prefix='/e')
-    app.register_blueprint(media_ids, url_prefix = '/mids')
+    app.register_blueprint(media, url_prefix = '/mids')
     app.register_blueprint(users, url_prefix = '/u')
     app.register_blueprint(videos, url_prefix = '/v')
     app.register_blueprint(tags, url_prefix = '/t' )
