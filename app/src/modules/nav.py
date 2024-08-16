@@ -50,6 +50,14 @@ def UpdateTagNav():
 def DeleteTagNav():
     st.sidebar.page_link("pages/23_Delete_Tag.py",label="Delete Tag", icon='🖥️')
 
+def CreateMediaImageNav():
+    st.sidebar.page_link("pages/24_Create_Image.py", label="Create New Media Image", icon='🖼️')
+
+def UpdateMediaImageNav():
+    st.sidebar.page_link("pages/25_Update_Image.py", label="Update Media Image", icon='🖼️')
+
+def DeleteMediaImageNav():
+    st.sidebar.page_link("pages/26_Delete_Image.py", label="Delete Media Image", icon='🖼️')
 #### ------------------------Journalist Role ------------------------
 def JournalistPageNav():
     st.sidebar.page_link("pages/40_Journalist_Home.py", label="Journalist", icon='🖥️')
