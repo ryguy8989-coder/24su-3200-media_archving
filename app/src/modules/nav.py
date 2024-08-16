@@ -40,7 +40,7 @@ def AdminPageNav():
     st.sidebar.page_link("pages/20_Admin_Home.py", label="System Admin", icon='🖥️')
     st.sidebar.page_link("pages/43_Find_Images.py", label='Find Images by tag', icon='🏢')
     st.sidebar.page_link("pages/22_Get_Users.py", label='Get all Users', icon='🏢')
-
+    st.sidebar.page_link("pages/23_Trending_Tags.py", label='Get Trending Tags', icon='🏢')
 #### ------------------------ System Admin Role ------------------------
 def JournalistPageNav():
     st.sidebar.page_link("pages/40_Journalist_Home.py", label="Journalist", icon='🖥️')
