@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 
+st.write("# Add a Piece of Media to Your List")
+st.write("Current Images")
 def fetch_and_display_image():
     try:
         # Make a GET request to fetch tags from the API
@@ -14,6 +16,7 @@ def fetch_and_display_image():
 # Call the function to fetch and display tags
 fetch_and_display_image()
 
+st.write("Current Literature")
 def fetch_and_display_lit():
     try:
         lit = requests.get('http://api:4000/l/lit').json()
@@ -24,6 +27,7 @@ def fetch_and_display_lit():
 
 fetch_and_display_lit()
 
+st.write("Current Videos")
 def fetch_and_display_video():
     try:
         videos = requests.get('http://api:4000/v/videos').json()
@@ -36,7 +40,6 @@ fetch_and_display_video()
 
 
 
-st.write("# Add a Piece of Media to Your List")
 
 with st.form("Add Media"):
     user_id = st.number_input("User ID (Integer):", min_value=1, step=1, help="Your user ID.")
