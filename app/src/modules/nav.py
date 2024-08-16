@@ -27,7 +27,7 @@ def UpdateTagNav():
 
 ## ------------------------ Examples for Role of Book Enjoyer ------------------------
 def ApiTestNav():
-    st.sidebar.page_link("pages/12_API_Test.py", label="Test the API", icon='🛜')
+    st.sidebar.page_link("pages/12_View_Literature.py", label="View all Literature", icon='🛜')
 
 def NewTagNav():
     st.sidebar.page_link("pages/14_Create_New_Tag.py",label="Add a New Tag", icon='🖥️')
