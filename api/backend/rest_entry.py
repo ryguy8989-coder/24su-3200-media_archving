@@ -14,7 +14,6 @@ from backend.media_videos.media_videos_routes import videos
 from backend.tags.tags_routes import tags
 from backend.media_literature.media_literature_routes import lit
 
-
 import os
 from dotenv import load_dotenv
 
