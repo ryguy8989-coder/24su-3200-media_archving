@@ -16,8 +16,8 @@ def MovEnjoyHomeNav():
 #def WorldBankVizNav():
 #    st.sidebar.page_link("pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon='🏦')
 
-#def MapDemoNav():
-#    st.sidebar.page_link("pages/02_Map_Demo.py", label="Map Demonstration", icon='🗺️')
+def SearchWithGenreNav():
+    st.sidebar.page_link("pages/06_Search_Genre.py", label="Find Videos with Genre", icon='🗺️')
 
 def GetVideos():
     st.sidebar.page_link("pages/04_Get_Videos.py", label="Get Videos", icon='🗺️')
@@ -72,7 +72,7 @@ def SideBarLinks(show_home=False):
             MovEnjoyHomeNav()
             #WorldBankVizNav()
             NewTagNav()
-        #    MapDemoNav()
+            SearchWithGenreNav()
 
         # If the user role is book enjoyer, show the Api Testing page
         if st.session_state['role'] == 'book_enjoyer':

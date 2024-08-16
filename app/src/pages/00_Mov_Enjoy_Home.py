@@ -38,3 +38,8 @@ if st.button('Find Videos Based On Tag',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/05_Find_Videos.py')
+
+if st.button('Find Videos Based On Genre', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/06_Search_Genre.py')

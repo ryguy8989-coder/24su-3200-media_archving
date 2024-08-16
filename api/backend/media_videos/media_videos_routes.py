@@ -25,3 +25,19 @@ def get_all_videos():
     the_response.mimetype = 'application/json'
     return the_response
 
+@videos.route('videos/<genre>', methods=['GET'])
+def get_video_genre(genre):
+    current_app.logger.info('GET /videos/{genre} route')
+    cursor = db.get_db().cursor()
+    query = f"SELECT * FROM media_videos WHERE genre = '{genre}'"
+    cursor.execute(query)
+
+    rows = cursor.fetchall()
+    cursor.close()
+
+    # Convert rows to JSON
+    json_data = [row for row in rows]
+    response = make_response(jsonify(json_data))
+    response.status_code = 200
+    response.mimetype = 'application/json'
+    return response
