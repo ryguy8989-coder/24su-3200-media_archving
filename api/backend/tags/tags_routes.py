@@ -94,10 +94,13 @@ def find_tagged_literature():
     ORDER BY ml.title ASC;
     '''
     cursor.execute(query, (tag_name,))
-    rows = cursor.fetchall()
+    theData = cursor.fetchall()
 
-    # Convert fetched data to a list of dictionaries
-    column_names = [desc[0] for desc in cursor.description]
-    data = [dict(zip(column_names, row)) for row in rows]
+    # Check if data is found
+    if not theData:
+        return jsonify({"message": "No literature found for the provided tag"}), 404
 
-    return jsonify(data), 200
+    the_response = make_response(jsonify(theData))
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
