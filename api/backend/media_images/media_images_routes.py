@@ -49,3 +49,25 @@ def get_images_by_tag(tag):
     response.status_code = 200
     response.mimetype = 'application/json'
     return response
+    
+# Route for admin to create new media image
+@images.route('/images', methods=['POST'])
+def create_new_image():
+    try:
+        data = request.get_json()
+        image_type = data.get('image_type')
+        image_link = data.get('image_link')
+        photographer = data.get('photographer')
+        title = data.get('title')
+        description = data.get('description')
+        if not image_type or not image_link or not photographer or not title or not description:
+            return jsonify({'error': 'Missing required fields'}), 400
+        cursor = db.get_db().cursor()
+        query = """
+            INSERT INTO media_images (image_type, image_link, photographer, title, description)
+            VALUES (%s, %s, %s, %s, %s)
+        """
+        cursor.execute(query, (image_type, image_link, photographer, title, description))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media image added successfully'}), 201
