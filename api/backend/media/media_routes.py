@@ -19,3 +19,22 @@ def get_all_media_ids():
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
+# make blueprint object
+media_tags= Blueprint('media_tags', __name__)
+
+# Make route
+@media.route('/media_tags', methods=['GET'])
+def get_all_media_tags():
+    cursor = db.get_db().cursor()
+    query = '''
+     SELECT * FROM media_tags 
+
+'''
+    cursor.execute(query)
+    theData = cursor.fetchall()
+    the_response = make_response(theData)
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
+
