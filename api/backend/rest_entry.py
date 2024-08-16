@@ -13,6 +13,7 @@ from backend.media_images.media_images_routes import images
 from backend.media_videos.media_videos_routes import videos
 from backend.tags.tags_routes import tags
 from backend.media_literature.media_literature_routes import lit
+from backend.find_media.find_media_routes import find_media
 
 import os
 from dotenv import load_dotenv
@@ -110,6 +111,7 @@ def create_app():
     app.register_blueprint(tags, url_prefix = '/t' )
     app.register_blueprint(images, url_prefix = '/i')
     app.register_blueprint(lit, url_prefix = '/l')
+    app.register_blueprint(find_media, url_prefix = '/fm')
 
 
 
