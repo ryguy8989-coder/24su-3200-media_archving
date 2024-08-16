@@ -27,7 +27,7 @@ fetch_and_display_tags()
 
 
 with st.form("Find Videos"):
-    search_tag = st.text_input("Input Tag to Search Videos:")  # Text input for the tag to search
+    search_tag = st.text_input("Input Tag to Search for Videos:")  # Text input for the tag to search
     search_submitted = st.form_submit_button("Search")  # Submit button for searching videos
 
     if search_submitted:
