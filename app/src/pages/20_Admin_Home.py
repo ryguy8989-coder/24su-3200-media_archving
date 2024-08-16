@@ -22,6 +22,11 @@ if st.button("Create a New Tag",
              use_container_width=True):
   st.switch_page('pages/14_Create_New_Tag.py')
 
+if st.button('Add Media', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/51_Insert_User_Media.py')
+
 if st.button('Find Images Based on Tag', 
              type='primary',
              use_container_width=True):

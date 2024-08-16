@@ -29,6 +29,11 @@ if st.button('See all Videos',
              use_container_width=True):
   st.switch_page('pages/04_Get_Videos.py')
 
+if st.button('Add Media', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/51_Insert_User_Media.py')
+
 if st.button("Create a New Tag",
              type='primary',
              use_container_width=True):
