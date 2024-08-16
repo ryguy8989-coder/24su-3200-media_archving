@@ -13,7 +13,7 @@ SideBarLinks()
 # Page title
 st.write("# Searching Media Literature by Tag")
 
-st.write("All Tags")
+st.write("Current Tags:")
 # Function to fetch and display existing tags
 def fetch_and_display_tags():
     try:

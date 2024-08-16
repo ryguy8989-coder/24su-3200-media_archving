@@ -11,6 +11,7 @@ SideBarLinks()
 # Page title
 st.write("# Searching Media Images by Tag")
 
+st.write("Current Tags:")
 # Function to fetch and display existing tags
 def fetch_and_display_tags():
     try:

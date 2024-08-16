@@ -10,6 +10,22 @@ SideBarLinks()
 # Section for finding videos by tag
 st.write("## Find Videos by Tag")
 
+st.write("Current Tags:")
+# Function to fetch and display existing tags
+def fetch_and_display_tags():
+    try:
+        # Make a GET request to fetch tags from the API
+        tags = requests.get('http://api:4000/t/tags').json()
+        # Display the tags in a dataframe
+        st.dataframe(tags)
+    except Exception as e:
+        # Handle errors and display a message
+        st.write(f"Could not connect to the database to get tags: {str(e)}")
+
+# Call the function to fetch and display tags
+fetch_and_display_tags()
+
+
 with st.form("Find Videos"):
     search_tag = st.text_input("Input Tag to Search Videos:")  # Text input for the tag to search
     search_submitted = st.form_submit_button("Search")  # Submit button for searching videos

@@ -25,3 +25,19 @@ if st.button("Create a New Tag",
              type='primary',
              use_container_width=True):
   st.switch_page('pages/14_Create_New_Tag.py')
+
+if st.button('Find Images Based on Tag', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/43_Find_Images.py')
+
+if st.button("Find Literature Based on Tag",
+            type='primary',
+            use_container_width=True):
+ st.switch_page('pages/13_Find_Literature.py')
+
+if st.button('Find Videos Based On Tag', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/05_Find_Videos.py')
+ 
