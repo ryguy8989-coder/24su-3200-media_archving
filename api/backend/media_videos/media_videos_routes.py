@@ -84,3 +84,13 @@ def update_video(video_id):
 
     return jsonify({'message': 'Video updated successfully'}), 200
 
+# Route for admin to delete a video
+@videos.route('/videos/<int:video_id>', methods=['DELETE'])
+def delete_video(video_id):
+    cursor = db.get_db().cursor()
+    query = 'DELETE FROM media_videos WHERE id = %s'
+    cursor.execute(query, (video_id,))
+    db.get_db().commit()
+    cursor.close()
+
+    return jsonify({'message': 'Video deleted successfully'}), 200
