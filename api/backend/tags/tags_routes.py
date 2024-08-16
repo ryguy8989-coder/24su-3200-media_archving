@@ -97,77 +97,20 @@ def find_tagged_videos():
     the_response.mimetype = 'application/json'
     return the_response
 
-# Find Literature Based on Tag
-@tags.route('/literature', methods=['GET'])
-def find_tagged_literature():
-    tag_name = request.args.get('tag', default='', type=str)
-
-    if not tag_name:
-        return jsonify({"error": "Tag name is required"}), 400
-
-    cursor = db.get_db().cursor()
-    query = '''
-    SELECT ml.title, ml.author, ml.genre, t.tag_name
-    FROM media_literature ml
-    JOIN media_tags mt ON ml.id = mt.media_id
-    JOIN tags t ON mt.tag_id = t.tag_id
-    WHERE t.tag_name = %s
-    ORDER BY ml.title ASC;
-    '''
-    cursor.execute(query, (tag_name,))
-    theData = cursor.fetchall()
-
-    # Check if data is found
-    if not theData:
-        return jsonify({"message": "No literature found for the provided tag"}), 404
-
-    the_response = make_response(jsonify(theData))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
-
-# Find Images based on Tag
-@tags.route('/images', methods=['GET'])
-def find_tagged_images():
-    tag_name = request.args.get('tag', default='', type=str)
-
-    if not tag_name:
-        return jsonify({"error": "Tag name is required"}), 400
-
-    cursor = db.get_db().cursor()
-    query = '''
-    SELECT mi.title, mi.author, mi.genre, t.tag_name
-    FROM media_images mi
-    JOIN media_tags mt ON ml.id = mt.media_id
-    JOIN tags t ON mt.tag_id = t.tag_id
-    WHERE t.tag_name = %s
-    ORDER BY ml.title ASC;
-    '''
-    cursor.execute(query, (tag_name,))
-    theData = cursor.fetchall()
-
-    # Check if data is found
-    if not theData:
-        return jsonify({"message": "No images found for the provided tag"}), 404
-
-    the_response = make_response(jsonify(theData))
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
-
 # Delete a Tag
 @tags.route('/tags', methods=['DELETE'])
 def delete_tag_by_name():
     tag_name = request.args.get('tag_name', default='', type=str)
-
     if not tag_name:
         return jsonify({"error": "Tag name is required"}), 400
 
     cursor = db.get_db().cursor()
 
     # Delete the tag
-    query_delete = 'DELETE FROM tags WHERE tag_name = %s'
-    cursor.execute(query_delete, (tag_name,))
+    query_delete = f"'DELETE FROM tags WHERE tag_name = '{tag_name}'"
+    current_app.logger.info(query_delete)
+    cursor = db.get_db().cursor()
+    cursor.execute(query_delete)
     db.get_db().commit()
 
     return jsonify({"message": f"Tag '{tag_name}' deleted successfully"}), 200

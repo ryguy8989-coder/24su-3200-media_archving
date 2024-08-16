@@ -48,10 +48,11 @@ if tags:
                 }
 
                 # Make a PUT request to update the tag
-                response = requests.put('http://api:4000/tag', json=data)
+                response = requests.put('http://api:4000/t/tags', json=data)
                 
                 if response.status_code == 200:
                     st.success(f"Tag '{old_tag_name}' has been successfully updated to '{new_tag_name}'!")
+                    st.dataframe(tags)
                 elif response.status_code == 404:
                     st.error(f"Tag '{old_tag_name}' not found.")
                 else:
