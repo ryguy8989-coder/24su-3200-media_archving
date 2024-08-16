@@ -98,3 +98,18 @@ def update_image(id):
     except Exception as e:
         current_app.logger.error(f'Error updating media image: {e}')
         return jsonify({'error': 'An error occurred while updating media image'}), 500
+
+
+# Route for admin to delete existing media image
+@images.route('/images/<int:id>', methods=['DELETE'])
+def delete_image(id):
+    try:
+        cursor = db.get_db().cursor()
+        query = "DELETE FROM media_images WHERE id = %s"
+        cursor.execute(query, (id,))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media image deleted successfully'}), 200
+    except Exception as e:
+        current_app.logger.error(f'Error deleting media image: {e}')
+        return jsonify({'error': 'An error occurred while deleting media image'}), 500
