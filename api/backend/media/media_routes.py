@@ -157,7 +157,7 @@ def add_media_tag():
 
         # Validate that both tag_d and media_id are provided
         if not tag_id or not media_id:
-            return jsonify({"error": "Both user_id and media_id are required"}), 400
+            return jsonify({"error": "Both tag_id and media_id are required"}), 400
 
         # Construct the SQL query to insert into media_tags table
         query = '''
