@@ -74,6 +74,39 @@ def add_user_media():
         return jsonify({"error": "Failed to add media to user"}), 500
     
 
+@media.route('/add_media_tag', methods=['POST'])
+def add_media_tag():
+    try:
+        # Get the data from the request
+        input = request.json
+        current_app.logger.info(input)
+
+        # Extract the necessary information
+        tag_id = input.get('tag_id')
+        media_id = input.get('media_id')
+
+        # Validate that both tag_d and media_id are provided
+        if not tag_id or not media_id:
+            return jsonify({"error": "Both user_id and media_id are required"}), 400
+
+        # Construct the SQL query to insert into media_tags table
+        query = '''
+            INSERT INTO media_tags (tag_id, media_id)
+            VALUES (%s, %s)
+        '''
+
+        # Execute the query
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (tag_id, media_id))
+        db.get_db().commit()
+
+        return jsonify({"message": "Tag added to media successfully!"}), 201
+
+    except Exception as e:
+        current_app.logger.error(f"Error occurred: {e}")
+        return jsonify({"error": "Failed to add tag to media"}), 500
+    
+
     
 
 

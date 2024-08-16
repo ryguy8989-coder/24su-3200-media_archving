@@ -19,6 +19,11 @@ if st.button('View all Literature',
              use_container_width=True):
   st.switch_page('pages/12_View_Literature.py')
 
+if st.button('Add Tag to Media', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/52_Insert_Media_Tag.py')
+
 if st.button("Create a New Tag",
              type='primary',
              use_container_width=True):

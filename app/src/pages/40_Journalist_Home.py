@@ -24,6 +24,11 @@ if st.button('Add Media',
              use_container_width=True):
   st.switch_page('pages/51_Insert_User_Media.py')
 
+if st.button('Add Tag to Media', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/52_Insert_Media_Tag.py')
+
 if st.button("Create a New Tag",
              type='primary',
              use_container_width=True):
