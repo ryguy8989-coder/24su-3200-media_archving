@@ -9,9 +9,9 @@ def HomeNav():
 def AboutPageNav():
     st.sidebar.page_link("pages/30_About.py", label="About", icon="🧠")
 
-#### ------------------------ Examples for Role of pol_strat_advisor ------------------------
-def PolStratAdvHomeNav():
-    st.sidebar.page_link("pages/00_Pol_Strat_Home.py", label="Political Strategist Home", icon='👤')
+#### ------------------------ Examples for Role of Movie Enjoyer ------------------------
+def MovEnjoyHomeNav():
+    st.sidebar.page_link("pages/00_Mov_Enjoy_Home.py", label="Movie Enjoyer Home", icon='👤')
 
 #def WorldBankVizNav():
 #    st.sidebar.page_link("pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon='🏦')
@@ -68,8 +68,8 @@ def SideBarLinks(show_home=False):
     if st.session_state["authenticated"]:
 
         # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
-        if st.session_state['role'] == 'pol_strat_advisor':
-            PolStratAdvHomeNav()
+        if st.session_state['role'] == 'movie_enjoyer':
+            MovEnjoyHomeNav()
             #WorldBankVizNav()
             NewTagNav()
         #    MapDemoNav()
