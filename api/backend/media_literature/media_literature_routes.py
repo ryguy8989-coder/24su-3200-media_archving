@@ -43,3 +43,69 @@ def get_media_literature_by_tag(tag):
     response.status_code = 200
     response.mimetype = 'application/json'
     return response
+
+# Route for admin to create new media literature
+@lit.route('/lit', methods=['POST'])
+def create_new_media_literature():
+    try:
+        data = request.get_json()
+        title = data.get('title')
+        genre = data.get('genre')
+        description = data.get('description')
+        author = data.get('author')
+        publication_date = data.get('publication_date')
+        if not title or not genre or not description or not author or not publication_date:
+            return jsonify({'error': 'Missing required fields'}), 400
+        cursor = db.get_db().cursor()
+        query = """
+            INSERT INTO media_literature (title, genre, description, author, publication_date)
+            VALUES (%s, %s, %s, %s, %s)
+        """
+        cursor.execute(query, (title, genre, description, author, publication_date))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media literature added successfully'}), 201
+    except Exception as e:
+        current_app.logger.error(f'Error creating new media literature: {e}')
+        return jsonify({'error': 'An error occurred while adding media literature'}), 500
+
+# Route for admin to update existing media literature
+@lit.route('/lit/<int:id>', methods=['PUT'])
+def update_media_literature(id):
+    try:
+        data = request.get_json()
+        title = data.get('title')
+        genre = data.get('genre')
+        description = data.get('description')
+        author = data.get('author')
+        publication_date = data.get('publication_date')
+        if not title or not genre or not description or not author or not publication_date:
+            return jsonify({'error': 'Missing required fields'}), 400
+        cursor = db.get_db().cursor()
+        query = """
+            UPDATE media_literature
+            SET title = %s, genre = %s, description = %s, author = %s, publication_date = %s
+            WHERE id = %s
+        """
+        cursor.execute(query, (title, genre, description, author, publication_date, id))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media literature updated successfully'}), 200
+    except Exception as e:
+        current_app.logger.error(f'Error updating media literature: {e}')
+        return jsonify({'error': 'An error occurred while updating media literature'}), 500
+
+
+# Route for admin to delete existing media literature
+@lit.route('/lit/<int:id>', methods=['DELETE'])
+def delete_media_literature(id):
+    try:
+        cursor = db.get_db().cursor()
+        query = "DELETE FROM media_literature WHERE id = %s"
+        cursor.execute(query, (id,))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media literature deleted successfully'}), 200
+    except Exception as e:
+        current_app.logger.error(f'Error deleting media literature: {e}')
+        return jsonify({'error': 'An error occurred while deleting media literature'}), 500
