@@ -97,20 +97,19 @@ def find_tagged_videos():
     the_response.mimetype = 'application/json'
     return the_response
 
-# Delete a Tag
+#  Delete a Tag
 @tags.route('/tags', methods=['DELETE'])
 def delete_tag_by_name():
     tag_name = request.args.get('tag_name', default='', type=str)
+
     if not tag_name:
         return jsonify({"error": "Tag name is required"}), 400
 
     cursor = db.get_db().cursor()
 
     # Delete the tag
-    query_delete = f"'DELETE FROM tags WHERE tag_name = '{tag_name}'"
-    current_app.logger.info(query_delete)
-    cursor = db.get_db().cursor()
-    cursor.execute(query_delete)
+    query_delete = 'DELETE FROM tags WHERE tag_name = %s'
+    cursor.execute(query_delete, (tag_name,))
     db.get_db().commit()
 
     return jsonify({"message": f"Tag '{tag_name}' deleted successfully"}), 200

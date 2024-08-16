@@ -32,9 +32,6 @@ def ApiTestNav():
 def NewTagNav():
     st.sidebar.page_link("pages/14_Create_New_Tag.py",label="Add a New Tag", icon='🖥️')
 
-#def PredictionNav():
-#    st.sidebar.page_link("pages/11_Prediction.py", label="Regression Prediction", icon='📈')
-
 def FindLiteratureWithGenreNav():
     st.sidebar.page_link("pages/13_Find_Literature.py", label="Find Literature with Genre", icon='🖥️')
 
@@ -46,6 +43,12 @@ def AdminPageNav():
     st.sidebar.page_link("pages/43_Find_Images.py", label='Find Images by tag', icon='🏢')
     st.sidebar.page_link("pages/22_Get_Users.py", label='Get all Users', icon='🏢')
     st.sidebar.page_link("pages/23_Trending_Tags.py", label='Get Trending Tags', icon='🏢')
+
+def UpdateTagNav():
+    st.sidebar.page_link("pages/21_Update_Tag.py",label="Update Tag", icon='🖥️')
+
+def DeleteTagNav():
+    st.sidebar.page_link("pages/23_Delete_Tag.py",label="Delete Tag", icon='🖥️')
 
 #### ------------------------Journalist Role ------------------------
 def JournalistPageNav():
@@ -97,12 +100,14 @@ def SideBarLinks(show_home=False):
             AdminPageNav()
             #NewTagNav()
             UpdateTagNav()
+            DeleteTagNav()
 
         # If the user is an journalist, give them access to the journalist pages
         if st.session_state['role'] == 'journalist':
             JournalistPageNav()
             #NewTagNav()
             UpdateTagNav()
+            DeleteTagNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()

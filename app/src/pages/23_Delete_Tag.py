@@ -36,15 +36,15 @@ if tags:
     tag_to_delete = st.selectbox("Select a Tag to Delete:", [tag['tag_name'] for tag in tags])
 
     if st.button("Delete Tag"):
-        data = {}
-        data['tag_name'] = tag_to_delete
         try:
             # Make a DELETE request to delete the selected tag by its name
-            requests.delete(f'http://api:4000/t/tags', json=data)
-            response = requests.delete(f'http://api:4000/t/tags', json=data)
-            
+            requests.delete(f'http://api:4000/t/tags', params={'tag_name': tag_to_delete})
+            response = requests.delete(f'http://api:4000/t/tags', params={'tag_name': tag_to_delete})
+
             if response.status_code == 200:
                 st.success(f"Tag '{tag_to_delete}' has been successfully deleted!")
+                st.write("Current Tags:")
+                tags = fetch_and_display_tags()
             #else:
             #    st.error(f"Failed to delete tag '{tag_to_delete}'. Server responded with status code {response.status_code}.")
         except Exception as e:

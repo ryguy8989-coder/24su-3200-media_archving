@@ -52,7 +52,8 @@ if tags:
                 
                 if response.status_code == 200:
                     st.success(f"Tag '{old_tag_name}' has been successfully updated to '{new_tag_name}'!")
-                    st.dataframe(tags)
+                    st.write("Current Tags:")
+                    tags = fetch_and_display_tags()
                 elif response.status_code == 404:
                     st.error(f"Tag '{old_tag_name}' not found.")
                 else:
