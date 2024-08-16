@@ -95,3 +95,17 @@ def update_media_literature(id):
         current_app.logger.error(f'Error updating media literature: {e}')
         return jsonify({'error': 'An error occurred while updating media literature'}), 500
 
+
+# Route for admin to delete existing media literature
+@lit.route('/lit/<int:id>', methods=['DELETE'])
+def delete_media_literature(id):
+    try:
+        cursor = db.get_db().cursor()
+        query = "DELETE FROM media_literature WHERE id = %s"
+        cursor.execute(query, (id,))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media literature deleted successfully'}), 200
+    except Exception as e:
+        current_app.logger.error(f'Error deleting media literature: {e}')
+        return jsonify({'error': 'An error occurred while deleting media literature'}), 500
