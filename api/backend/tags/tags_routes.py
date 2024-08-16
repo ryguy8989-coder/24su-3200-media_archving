@@ -171,3 +171,25 @@ def delete_tag_by_name():
     db.get_db().commit()
 
     return jsonify({"message": f"Tag '{tag_name}' deleted successfully"}), 200
+
+@tags.route('/tags', methods = ['PUT'])
+def update_tag():
+    # Get the JSON data from the request
+    tag_info = request.json
+    current_app.logger.info(tag_info)
+
+    # Extract the relevant data from the request
+    old_tag_name = tag_info.get('old_tag_name')
+    new_tag_name = tag_info.get('new_tag_name')
+
+    if not old_tag_name or not new_tag_name:
+        return jsonify({"error": "Both old_tag_name and new_tag_name are required"}), 400
+
+    cursor = db.get_db().cursor()
+    
+    # Update the tag name
+    query_update = 'UPDATE tags SET tag_name = %s WHERE LOWER(tag_name) = LOWER(%s)'
+    cursor.execute(query_update, (new_tag_name, old_tag_name))
+    db.get_db().commit()
+
+    return jsonify({"message": f"Tag '{old_tag_name}' updated successfully to '{new_tag_name}'"}), 200
