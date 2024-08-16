@@ -71,4 +71,4 @@ with st.form("Add Media"):
         if response.status_code == 201:
             st.success("Media added to your list successfully!")
         else:
-            st.error(f"Failed to add tag to meda. Server responded with status code {response.status_code}.") 
+            st.error(f"Failed to add tag to media. Server responded with status code {response.status_code}.") 
