@@ -52,3 +52,13 @@ def add_video():
     url = data.get('url')
     if not title or not genre or not description or not url:
         return jsonify({'error': 'Missing required fields'}), 400
+    cursor = db.get_db().cursor()
+    query = '''
+        INSERT INTO media_videos (title, genre, description, url)
+        VALUES (%s, %s, %s, %s)
+    '''
+    cursor.execute(query, (title, genre, description, url))
+    db.get_db().commit()
+    cursor.close()
+
+    return jsonify({'message': 'Video added successfully'}), 201
