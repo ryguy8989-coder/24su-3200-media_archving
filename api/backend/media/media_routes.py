@@ -110,7 +110,7 @@ def get_all_media_tags():
     the_response.mimetype = 'application/json'
     return the_response
 
-
+#method to add media to users in bridge table
 @media.route('/user_media', methods=['POST'])
 def add_user_media():
     try:
@@ -143,7 +143,7 @@ def add_user_media():
         current_app.logger.error(f"Error occurred: {e}")
         return jsonify({"error": "Failed to add media to user"}), 500
     
-
+#method to add tags to media in bridge table
 @media.route('/add_media_tag', methods=['POST'])
 def add_media_tag():
     try:
