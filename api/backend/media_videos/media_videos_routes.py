@@ -50,3 +50,5 @@ def add_video():
     genre = data.get('genre')
     description = data.get('description')
     url = data.get('url')
+    if not title or not genre or not description or not url:
+        return jsonify({'error': 'Missing required fields'}), 400
