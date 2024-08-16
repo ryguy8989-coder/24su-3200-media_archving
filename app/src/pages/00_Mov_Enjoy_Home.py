@@ -34,7 +34,7 @@ if st.button('Add Tag to Media',
              use_container_width=True):
   st.switch_page('pages/52_Insert_Media_Tag.py')
 
-if st.button('Add Media', 
+if st.button('Add Media to List', 
              type='primary',
              use_container_width=True):
   st.switch_page('pages/51_Insert_User_Media.py')

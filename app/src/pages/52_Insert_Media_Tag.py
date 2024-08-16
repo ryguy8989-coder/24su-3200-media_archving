@@ -1,19 +1,17 @@
 import streamlit as st
 import requests
 
+st.write("Current Images:")
 def fetch_and_display_image():
     try:
-        # Make a GET request to fetch tags from the API
         images = requests.get('http://api:4000/i/images').json()
-        # Display the tags in a dataframe
         st.dataframe(images)
     except Exception as e:
-        # Handle errors and display a message
         st.write(f"Could not connect to the database to get images: {str(e)}")
 
-# Call the function to fetch and display tags
 fetch_and_display_image()
 
+st.write("Current Literature:")
 def fetch_and_display_lit():
     try:
         lit = requests.get('http://api:4000/l/lit').json()
@@ -24,6 +22,7 @@ def fetch_and_display_lit():
 
 fetch_and_display_lit()
 
+st.write("Current Videos:")
 def fetch_and_display_video():
     try:
         videos = requests.get('http://api:4000/v/videos').json()
@@ -34,6 +33,7 @@ def fetch_and_display_video():
 
 fetch_and_display_video()
 
+st.write("Current Tags:")
 def fetch_and_display_tags():
     try:
         # Fetch existing tags from the API
