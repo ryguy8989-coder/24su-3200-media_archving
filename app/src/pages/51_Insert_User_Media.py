@@ -39,8 +39,6 @@ def fetch_and_display_video():
 fetch_and_display_video()
 
 
-
-
 with st.form("Add Media"):
     user_id = st.number_input("User ID (Integer):", min_value=1, step=1, help="Your user ID.")
     media_id = st.number_input("Media ID (Integer):", min_value=1, step=1, help="The ID of the media you want to add.")
@@ -56,7 +54,7 @@ with st.form("Add Media"):
         }
 
         # Send a POST request to the Flask API
-        response = requests.post('http://api:4000/mids/user_media', json=data)
+        response = requests.post('http://api:4000/m/user_media', json=data)
 
         if response.status_code == 201:
             st.success("Media added to your list successfully!")

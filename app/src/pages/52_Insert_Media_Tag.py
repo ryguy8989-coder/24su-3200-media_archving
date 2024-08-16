@@ -66,7 +66,7 @@ with st.form("Add Media"):
         }
 
         # Send a POST request to the Flask API
-        response = requests.post('http://api:4000/mids/add_media_tag', json=data)
+        response = requests.post('http://api:4000/m/add_media_tag', json=data)
 
         if response.status_code == 201:
             st.success("Media added to your list successfully!")
