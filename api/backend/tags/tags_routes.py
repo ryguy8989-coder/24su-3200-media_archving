@@ -76,3 +76,28 @@ def find_tagged_videos():
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
+@tags.route('/literature', methods=['GET'])
+def find_tagged_literature():
+    tag_name = request.args.get('tag', default='', type=str)
+
+    if not tag_name:
+        return jsonify({"error": "Tag name is required"}), 400
+
+    cursor = db.get_db().cursor()
+    query = '''
+    SELECT ml.title, ml.author, ml.genre, t.tag_name
+    FROM media_literature ml
+    JOIN media_tags mt ON ml.id = mt.media_id
+    JOIN tags t ON mt.tag_id = t.tag_id
+    WHERE t.tag_name = %s
+    ORDER BY ml.title ASC;
+    '''
+    cursor.execute(query, (tag_name,))
+    rows = cursor.fetchall()
+
+    # Convert fetched data to a list of dictionaries
+    column_names = [desc[0] for desc in cursor.description]
+    data = [dict(zip(column_names, row)) for row in rows]
+
+    return jsonify(data), 200
