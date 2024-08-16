@@ -61,9 +61,9 @@ if st.button('Act as Barbara, a Book Enjoyer',
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'usaid_worker'
+    st.session_state['role'] = 'book_enjoyer'
     st.session_state['first_name'] = 'Barbara'
-    st.switch_page('pages/10_USAID_Worker_Home.py')
+    st.switch_page('pages/10_Book_Enjoyer_Home.py')
 
 if st.button('Act as Matthew Smith, Business Analyst', 
             type = 'primary', 
