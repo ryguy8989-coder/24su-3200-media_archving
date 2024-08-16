@@ -24,10 +24,10 @@ if st.button('View the Simple API Demo',
              use_container_width=True):
   st.switch_page('pages/12_API_Test.py')
 
-if st.button("View Classification Demo",
-             type='primary',
-             use_container_width=True):
-  st.switch_page('pages/13_Classification.py')
+#if st.button("View Classification Demo",
+ #            type='primary',
+  #           use_container_width=True):
+  #st.switch_page('pages/13_Classification.py')
 
 if st.button("Create a New Tag",
              type='primary',
