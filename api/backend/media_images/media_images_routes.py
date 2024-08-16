@@ -71,3 +71,30 @@ def create_new_image():
         db.get_db().commit()
         cursor.close()
         return jsonify({'message': 'Media image added successfully'}), 201
+
+
+# Route for admin to update existing media image
+@images.route('/images/<int:id>', methods=['PUT'])
+def update_image(id):
+    try:
+        data = request.get_json()
+        image_type = data.get('image_type')
+        image_link = data.get('image_link')
+        photographer = data.get('photographer')
+        title = data.get('title')
+        description = data.get('description')
+        if not image_type or not image_link or not photographer or not title or not description:
+            return jsonify({'error': 'Missing required fields'}), 400
+        cursor = db.get_db().cursor()
+        query = """
+            UPDATE media_images
+            SET image_type = %s, image_link = %s, photographer = %s, title = %s, description = %s
+            WHERE id = %s
+        """
+        cursor.execute(query, (image_type, image_link, photographer, title, description, id))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media image updated successfully'}), 200
+    except Exception as e:
+        current_app.logger.error(f'Error updating media image: {e}')
+        return jsonify({'error': 'An error occurred while updating media image'}), 500
