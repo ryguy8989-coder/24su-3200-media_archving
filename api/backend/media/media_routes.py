@@ -8,7 +8,77 @@ from backend.ml_models.model01 import predict
 # make blueprint object
 media= Blueprint('media ids', __name__)
 
-# Make route
+# Route to create new video
+@media.route('/videos', methods=['POST'])
+def create_video():
+    # Collecting data from the request object
+    the_data = request.json
+    current_app.logger.info(the_data)
+
+    # Extracting variables from the request data
+    id = the_data.get('id')
+    length = the_data.get('length')
+    description = the_data.get('description')
+    video_type = the_data.get('video_type')
+    name = the_data.get('name')
+    size = the_data.get('size')
+    quality = the_data.get('quality')
+    genre = the_data.get('genre')
+    director = the_data.get('director')
+
+    query = '''
+        INSERT INTO media_videos 
+        (id, length, description, video_type, name, size, quality, genre, director) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+    '''
+
+    current_app.logger.info(query)
+
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (id, length, description, video_type, name, size, quality, genre, director))
+    db.get_db().commit()
+
+    return jsonify({"message": "Video created successfully!"}), 201
+
+
+# Route to create new literature
+@media.route('/literature', methods=['POST'])
+def create_literature():
+    # Collecting data from the request object
+    the_data = request.json
+    current_app.logger.info(the_data)
+
+    # Extracting variables from the request data
+    id = the_data.get('id')
+    link = the_data.get('link')
+    description = the_data.get('description')
+    type = the_data.get('type')
+    title = the_data.get('title')
+    publisher = the_data.get('publisher')
+    publication_date = the_data.get('publication_date')
+    genre = the_data.get('genre')
+    author = the_data.get('author')
+    page_count = the_data.get('page_count')
+    ISBN = the_data.get('ISBN')
+    budget = the_data.get('budget')
+
+    query = '''
+        INSERT INTO media_literature
+        (id, link, description, type, title, publisher, publication_date, genre, author, page_count, ISBN, budget) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    '''
+
+    current_app.logger.info(query)
+
+    cursor = db.get_db().cursor()
+    cursor.execute(query, (id, link, description, type, title, publisher, publication_date, 
+                           genre, author, page_count, ISBN, budget))
+    db.get_db().commit()
+
+    return jsonify({"message": "Literature created successfully!"}), 201
+
+
+# Get all Media IDs
 @media.route('/media_ids', methods=['GET'])
 def get_all_media_ids():
     cursor = db.get_db().cursor()
