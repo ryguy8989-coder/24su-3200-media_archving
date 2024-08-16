@@ -38,10 +38,11 @@ with st.form("Find Literature"):
     if search_submitted:
         try:
             # Make a GET request to find literature by tag
-            response = requests.get(f'http://api:4000/literature?tag={search_tag}')
+            response = requests.get(f'http://api:4000/l/lit/{search_tag}')
 
             # Check if the response is empty or not JSON
             if response.status_code == 200 and response.content:
+                literature = response.json() # Attempt to parse JSON
                 try:
                     literature = response.json()  # Attempt to parse JSON response
 

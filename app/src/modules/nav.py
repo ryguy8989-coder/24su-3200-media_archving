@@ -32,8 +32,8 @@ def NewTagNav():
 #def PredictionNav():
 #    st.sidebar.page_link("pages/11_Prediction.py", label="Regression Prediction", icon='📈')
 
-#def ClassificationNav():
-#    st.sidebar.page_link("pages/13_Classification.py", label="Classification Demo", icon='🌺')
+def FindLiteratureWithGenreNav():
+    st.sidebar.page_link("pages/13_Find_Literature.py", label="Find Literature with Genre", icon='🖥️')
 
 #### ------------------------ System Admin Role ------------------------
 def AdminPageNav():
@@ -79,7 +79,7 @@ def SideBarLinks(show_home=False):
          #   PredictionNav()
             ApiTestNav() 
             NewTagNav()
-        #    ClassificationNav()
+            FindLiteratureWithGenreNav()
         
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state['role'] == 'administrator':
