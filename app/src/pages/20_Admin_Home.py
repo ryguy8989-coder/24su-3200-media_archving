@@ -41,4 +41,9 @@ if st.button('Find Top 10 Tags',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/23_Trending_Tags.py')
+
+if st.button('Delete Tag', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/23_Delete_Tag.py')
  

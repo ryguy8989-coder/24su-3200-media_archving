@@ -53,11 +53,9 @@ def create_tag():
     current_app.logger.info(the_data)
 
     #Extracting the variable
-    
     name = the_data['tag_name']
 
     # Constructing the query
-
     query = 'INSERT INTO tags (tag_name) VALUES ("{}")'.format(name)
 
     current_app.logger.info(query)
@@ -69,6 +67,7 @@ def create_tag():
     
     return jsonify({'message': 'Success!'}), 201
 
+# Find videos based on tag
 @tags.route('/videos', methods=['GET'])
 def find_tagged_videos():
     # Get the tag name from the query parameters
@@ -98,6 +97,7 @@ def find_tagged_videos():
     the_response.mimetype = 'application/json'
     return the_response
 
+# Find Literature Based on Tag
 @tags.route('/literature', methods=['GET'])
 def find_tagged_literature():
     tag_name = request.args.get('tag', default='', type=str)
@@ -126,6 +126,7 @@ def find_tagged_literature():
     the_response.mimetype = 'application/json'
     return the_response
 
+# Find Images based on Tag
 @tags.route('/images', methods=['GET'])
 def find_tagged_images():
     tag_name = request.args.get('tag', default='', type=str)
@@ -153,3 +154,20 @@ def find_tagged_images():
     the_response.status_code = 200
     the_response.mimetype = 'application/json'
     return the_response
+
+# Delete a Tag
+@tags.route('/tags', methods=['DELETE'])
+def delete_tag_by_name():
+    tag_name = request.args.get('tag_name', default='', type=str)
+
+    if not tag_name:
+        return jsonify({"error": "Tag name is required"}), 400
+
+    cursor = db.get_db().cursor()
+
+    # Delete the tag
+    query_delete = 'DELETE FROM tags WHERE tag_name = %s'
+    cursor.execute(query_delete, (tag_name,))
+    db.get_db().commit()
+
+    return jsonify({"message": f"Tag '{tag_name}' deleted successfully"}), 200
