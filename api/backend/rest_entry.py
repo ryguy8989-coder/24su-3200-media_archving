@@ -5,7 +5,7 @@ from flask import Flask
 
 from backend.db_connection import db
 #from backend.customers.customer_routes import customers
-from backend.products.products_routes import products
+#from backend.products.products_routes import products
 #from backend.employees.employee_routes import employees
 from backend.media.media_routes import media
 from backend.users.user_routes import users
@@ -103,7 +103,7 @@ def create_app():
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
     #app.register_blueprint(customers,   url_prefix='/c')
-    app.register_blueprint(products,    url_prefix='/p')
+    #app.register_blueprint(products,    url_prefix='/p')
     #app.register_blueprint(employees,    url_prefix='/e')
     app.register_blueprint(media, url_prefix = '/m')
     app.register_blueprint(users, url_prefix = '/u')
