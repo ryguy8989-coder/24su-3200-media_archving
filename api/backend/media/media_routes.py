@@ -45,7 +45,7 @@ def get_all_media_tags():
 def add_user_media():
     try:
         # Get the data from the request
-        input = request.json
+        input = request.get_json()
         current_app.logger.info(input)
 
         # Extract the necessary information
