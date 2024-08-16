@@ -33,7 +33,7 @@ with st.form("Find Videos"):
     if search_submitted:
         try:
             # Make a GET request to find videos by tag
-            response = requests.get(f'http://api:4000/videos?tag={search_tag}')
+            response = requests.get(f'http://api:4000/v/videos/tag/{search_tag}')
 
             # Check if the response is empty or not JSON
             if response.status_code == 200 and response.content:

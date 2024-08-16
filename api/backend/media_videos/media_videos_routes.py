@@ -42,6 +42,30 @@ def get_video_genre(genre):
     response.mimetype = 'application/json'
     return response
 
+@videos.route('videos/tag/<tag>', methods=['GET'])
+def get_video_tag(tag):
+    current_app.logger.info(f'GET /videos/tag/{tag} route')
+    cursor = db.get_db().cursor()
+
+    # Use parameterized query to prevent SQL injection
+    query = '''SELECT mv.id AS video_id, mv.name AS video_name, mv.description AS video_description
+            FROM media_videos mv
+            JOIN media_tags mt ON mv.id = mt.media_id
+            JOIN tags t ON mt.tag_id = t.tag_id
+            WHERE t.tag_name = %s;'''
+    
+    cursor.execute(query, (tag,))
+
+    rows = cursor.fetchall()
+    cursor.close()
+
+    # Convert rows to JSON
+    json_data = [row for row in rows]
+    response = make_response(jsonify(json_data))
+    response.status_code = 200
+    response.mimetype = 'application/json'
+    return response
+
 # Route for admin to add a new video
 @videos.route('/videos', methods=['POST'])
 def add_video():
