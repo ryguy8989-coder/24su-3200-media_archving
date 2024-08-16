@@ -20,7 +20,7 @@ def fetch_and_display_lit():
         st.dataframe(lit)
     except Exception as e:
         # Handle errors and display a message
-        st.write(f"Could not connect to the database to get image: {str(e)}")
+        st.write(f"Could not connect to the database to get literature: {str(e)}")
 
 fetch_and_display_lit()
 
@@ -43,7 +43,7 @@ with st.form("Add Media"):
     media_id = st.number_input("Media ID (Integer):", min_value=1, step=1, help="The ID of the media you want to add.")
 
     submitted = st.form_submit_button("Submit")
-    
+
 
     if submitted:
         
@@ -53,7 +53,7 @@ with st.form("Add Media"):
         }
 
         # Send a POST request to the Flask API
-        response = requests.post('http://api:4000/m/user_media', json=data)
+        response = requests.post('http://api:4000/mids/user_media', json=data)
 
         if response.status_code == 201:
             st.success("Media added to your list successfully!")
