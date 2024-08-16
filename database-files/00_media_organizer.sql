@@ -130,8 +130,3 @@ CREATE TABLE IF NOT EXISTS user_media (
   FOREIGN KEY (media_id) REFERENCES media(media_id)
      ON UPDATE CASCADE ON DELETE CASCADE
   );
-
-SELECT mv.id AS video_id, mv.name AS video_name, mv.description AS video_description, t.tag_name
-FROM media_videos mv
-JOIN media_tags mt ON mv.id = mt.media_id
-JOIN tags t ON mt.tag_id = t.tag_id;
