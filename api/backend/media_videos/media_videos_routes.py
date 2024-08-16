@@ -41,3 +41,12 @@ def get_video_genre(genre):
     response.status_code = 200
     response.mimetype = 'application/json'
     return response
+
+# Route for admin to add a new video
+@videos.route('/videos', methods=['POST'])
+def add_video():
+    data = request.get_json()
+    title = data.get('title')
+    genre = data.get('genre')
+    description = data.get('description')
+    url = data.get('url')
