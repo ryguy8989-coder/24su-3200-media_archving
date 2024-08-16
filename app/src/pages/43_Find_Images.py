@@ -36,7 +36,7 @@ with st.form("Find Images"):
     if search_submitted:
         try:
             # Make a GET request to find images by tag
-            response = requests.get(f'http://api:4000/images?tag={search_tag}')
+            response = requests.get(f'http://api:4000/i/images/{search_tag}')
 
             # Check if the response is empty or not JSON
             if response.status_code == 200 and response.content:
