@@ -8,6 +8,7 @@ from modules.nav import SideBarLinks
 SideBarLinks()
 
 st.write("# Creating a New Tag")
+st.write("Current Tags:")
 
 def fetch_and_display_tags():
     try:
