@@ -3,6 +3,8 @@ import json
 from backend.db_connection import db
 from backend.ml_models.model01 import predict
 
+
+
 # make blueprint object
 media= Blueprint('media ids', __name__)
 
@@ -38,3 +40,42 @@ def get_all_media_tags():
     the_response.mimetype = 'application/json'
     return the_response
 
+
+@media.route('/user_media', methods=['POST'])
+def add_user_media():
+    try:
+        # Get the data from the request
+        input = request.json
+        current_app.logger.info(input)
+
+        # Extract the necessary information
+        user_id = input.get('user_id')
+        media_id = input.get('media_id')
+
+        # Validate that both user_id and media_id are provided
+        if not user_id or not media_id:
+            return jsonify({"error": "Both user_id and media_id are required"}), 400
+
+        # Construct the SQL query to insert into user_media table
+        query = '''
+            INSERT INTO user_media (user_id, media_id)
+            VALUES (%s, %s)
+        '''
+
+        # Execute the query
+        cursor = db.get_db().cursor()
+        cursor.execute(query, (user_id, media_id))
+        db.get_db().commit()
+
+        return jsonify({"message": "Media added to user successfully!"}), 201
+
+    except Exception as e:
+        current_app.logger.error(f"Error occurred: {e}")
+        return jsonify({"error": "Failed to add media to user"}), 500
+    
+
+    
+
+
+
+    
