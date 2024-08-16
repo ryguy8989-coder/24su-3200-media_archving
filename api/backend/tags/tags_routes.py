@@ -24,6 +24,27 @@ def get_all_tags():
     the_response.mimetype = 'application/json'
     return the_response
 
+@tags.route('tags/trending', methods=['GET'])
+def get_trending_tags():
+    cursor = db.get_db().cursor()
+    
+    #query to find trending tags
+    query = '''
+        SELECT t.tag_name, COUNT(mt.tag_id) AS usage_count
+        FROM tags t
+        JOIN media_tags mt ON t.tag_id = mt.tag_id
+        GROUP BY t.tag_name
+        ORDER BY usage_count DESC
+        LIMIT 10;
+    '''
+    cursor.execute(query)
+    theData = cursor.fetchall()
+    the_response = make_response(theData)
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
+
+
 # Route to create a new tag
 @tags.route('/tags', methods=['POST'])
 def create_tag():

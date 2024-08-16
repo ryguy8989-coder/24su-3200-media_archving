@@ -37,7 +37,7 @@ if st.button('Find Videos Based On Tag',
              use_container_width=True):
   st.switch_page('pages/05_Find_Videos.py')
 
-if st.button('Find Trending Tags',
+if st.button('Find Top 10 Tags',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/23_Trending_Tags.py')
