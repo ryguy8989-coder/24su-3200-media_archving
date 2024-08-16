@@ -62,3 +62,25 @@ def add_video():
     cursor.close()
 
     return jsonify({'message': 'Video added successfully'}), 201
+
+# Route for admin to update an existing video
+@videos.route('/videos/<int:video_id>', methods=['PUT'])
+def update_video(video_id):
+    data = request.get_json()
+    title = data.get('title')
+    genre = data.get('genre')
+    description = data.get('description')
+    url = data.get('url')
+
+    cursor = db.get_db().cursor()
+    query = '''
+        UPDATE media_videos
+        SET title = %s, genre = %s, description = %s, url = %s
+        WHERE id = %s
+    '''
+    cursor.execute(query, (title, genre, description, url, video_id))
+    db.get_db().commit()
+    cursor.close()
+
+    return jsonify({'message': 'Video updated successfully'}), 200
+
