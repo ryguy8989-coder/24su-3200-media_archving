@@ -55,6 +55,7 @@ def get_images_by_tag(tag):
 def create_new_image():
     try:
         data = request.get_json()
+        id = data.get('id')
         image_type = data.get('image_type')
         image_link = data.get('image_link')
         photographer = data.get('photographer')
@@ -64,10 +65,10 @@ def create_new_image():
             return jsonify({'error': 'Missing required fields'}), 400
         cursor = db.get_db().cursor()
         query = """
-            INSERT INTO media_images (image_type, image_link, photographer, title, description)
+            INSERT INTO media_images (id, image_type, image_link, photographer, title, description)
             VALUES (%s, %s, %s, %s, %s)
         """
-        cursor.execute(query, (image_type, image_link, photographer, title, description))
+        cursor.execute(query, (id, image_type, image_link, photographer, title, description))
         db.get_db().commit()
         cursor.close()
         return jsonify({'message': 'Media image added successfully'}), 201

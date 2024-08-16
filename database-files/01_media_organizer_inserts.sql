@@ -150,6 +150,157 @@ insert into media (media_id) values (147);
 insert into media (media_id) values (148);
 insert into media (media_id) values (149);
 insert into media (media_id) values (150);
+insert into media (media_id) values (151);
+insert into media (media_id) values (152);
+insert into media (media_id) values (153);
+insert into media (media_id) values (154);
+insert into media (media_id) values (155);
+insert into media (media_id) values (156);
+insert into media (media_id) values (157);
+insert into media (media_id) values (158);
+insert into media (media_id) values (159);
+insert into media (media_id) values (160);
+insert into media (media_id) values (161);
+insert into media (media_id) values (162);
+insert into media (media_id) values (163);
+insert into media (media_id) values (164);
+insert into media (media_id) values (165);
+insert into media (media_id) values (166);
+insert into media (media_id) values (167);
+insert into media (media_id) values (168);
+insert into media (media_id) values (169);
+insert into media (media_id) values (170);
+insert into media (media_id) values (171);
+insert into media (media_id) values (172);
+insert into media (media_id) values (173);
+insert into media (media_id) values (174);
+insert into media (media_id) values (175);
+insert into media (media_id) values (176);
+insert into media (media_id) values (177);
+insert into media (media_id) values (178);
+insert into media (media_id) values (179);
+insert into media (media_id) values (180);
+insert into media (media_id) values (181);
+insert into media (media_id) values (182);
+insert into media (media_id) values (183);
+insert into media (media_id) values (184);
+insert into media (media_id) values (185);
+insert into media (media_id) values (186);
+insert into media (media_id) values (187);
+insert into media (media_id) values (188);
+insert into media (media_id) values (189);
+insert into media (media_id) values (190);
+insert into media (media_id) values (191);
+insert into media (media_id) values (192);
+insert into media (media_id) values (193);
+insert into media (media_id) values (194);
+insert into media (media_id) values (195);
+insert into media (media_id) values (196);
+insert into media (media_id) values (197);
+insert into media (media_id) values (198);
+insert into media (media_id) values (199);
+insert into media (media_id) values (200);
+insert into media (media_id) values (201);
+insert into media (media_id) values (202);
+insert into media (media_id) values (203);
+insert into media (media_id) values (204);
+insert into media (media_id) values (205);
+insert into media (media_id) values (206);
+insert into media (media_id) values (207);
+insert into media (media_id) values (208);
+insert into media (media_id) values (209);
+insert into media (media_id) values (210);
+insert into media (media_id) values (211);
+insert into media (media_id) values (212);
+insert into media (media_id) values (213);
+insert into media (media_id) values (214);
+insert into media (media_id) values (215);
+insert into media (media_id) values (216);
+insert into media (media_id) values (217);
+insert into media (media_id) values (218);
+insert into media (media_id) values (219);
+insert into media (media_id) values (220);
+insert into media (media_id) values (221);
+insert into media (media_id) values (222);
+insert into media (media_id) values (223);
+insert into media (media_id) values (224);
+insert into media (media_id) values (225);
+insert into media (media_id) values (226);
+insert into media (media_id) values (227);
+insert into media (media_id) values (228);
+insert into media (media_id) values (229);
+insert into media (media_id) values (230);
+insert into media (media_id) values (231);
+insert into media (media_id) values (232);
+insert into media (media_id) values (233);
+insert into media (media_id) values (234);
+insert into media (media_id) values (235);
+insert into media (media_id) values (236);
+insert into media (media_id) values (237);
+insert into media (media_id) values (238);
+insert into media (media_id) values (239);
+insert into media (media_id) values (240);
+insert into media (media_id) values (241);
+insert into media (media_id) values (242);
+insert into media (media_id) values (243);
+insert into media (media_id) values (244);
+insert into media (media_id) values (245);
+insert into media (media_id) values (246);
+insert into media (media_id) values (247);
+insert into media (media_id) values (248);
+insert into media (media_id) values (249);
+insert into media (media_id) values (250);
+insert into media (media_id) values (251);
+insert into media (media_id) values (252);
+insert into media (media_id) values (253);
+insert into media (media_id) values (254);
+insert into media (media_id) values (255);
+insert into media (media_id) values (256);
+insert into media (media_id) values (257);
+insert into media (media_id) values (258);
+insert into media (media_id) values (259);
+insert into media (media_id) values (260);
+insert into media (media_id) values (261);
+insert into media (media_id) values (262);
+insert into media (media_id) values (263);
+insert into media (media_id) values (264);
+insert into media (media_id) values (265);
+insert into media (media_id) values (266);
+insert into media (media_id) values (267);
+insert into media (media_id) values (268);
+insert into media (media_id) values (269);
+insert into media (media_id) values (270);
+insert into media (media_id) values (271);
+insert into media (media_id) values (272);
+insert into media (media_id) values (273);
+insert into media (media_id) values (274);
+insert into media (media_id) values (275);
+insert into media (media_id) values (276);
+insert into media (media_id) values (277);
+insert into media (media_id) values (278);
+insert into media (media_id) values (279);
+insert into media (media_id) values (280);
+insert into media (media_id) values (281);
+insert into media (media_id) values (282);
+insert into media (media_id) values (283);
+insert into media (media_id) values (284);
+insert into media (media_id) values (285);
+insert into media (media_id) values (286);
+insert into media (media_id) values (287);
+insert into media (media_id) values (288);
+insert into media (media_id) values (289);
+insert into media (media_id) values (290);
+insert into media (media_id) values (291);
+insert into media (media_id) values (292);
+insert into media (media_id) values (293);
+insert into media (media_id) values (294);
+insert into media (media_id) values (295);
+insert into media (media_id) values (296);
+insert into media (media_id) values (297);
+insert into media (media_id) values (298);
+insert into media (media_id) values (299);
+insert into media (media_id) values (300);
+
 
 insert into media_images (id, image_type, image_link, photographer, title, description, resolution, date_taken, file_format) values (1, 'digital art', 'http://dummyimage.com/201x100.png/5fa2dd/ffffff', 'Bord Antoniat', 'Majestic waterfall in the forest', 'Robust demand-driven strategy', '2560x1440', '2015-07-16', '');
 insert into media_images (id, image_type, image_link, photographer, title, description, resolution, date_taken, file_format) values (2, 'abstract', 'http://dummyimage.com/236x100.png/5fa2dd/ffffff', 'Marsha Rolinson', 'Vintage car on a country road', 'Managed fresh-thinking frame', '2560x1440', '2000-11-18', 'webp');
@@ -820,15 +971,15 @@ VALUES (199, 'John Doe', 'j@gmail.com', 'book enjoyer', 1234567890, 'Boston', 'M
 
 
 INSERT INTO media (media_id)
-VALUES (1010),(333),(1060),(222),(1888),(1666),(1117);
+VALUES (1010),(3333),(1060),(2222),(1888),(1666),(1117);
 
 INSERT INTO media_videos (id, description, video_type, name, quality, genre, director)
 VALUES (1010, 'second batman movie', 'Movie', 'The Dark Knight Rises', 'HD', 'Action', 'Nolan'),
-               (333, 'mafia show', 'Show', 'Sopranos', 'HD','Drama','Chase');
+               (3333, 'mafia show', 'Show', 'Sopranos', 'HD','Drama','Chase');
 
 INSERT INTO media_literature (id, description, author, title, genre, page_count, type)
 VALUES (1060, 'The second one', 'Rowling', 'The Chamber of Secrets', 'Fantasy', 231, 'book'),
-      (222, 'The sixth one', 'Rowling', 'The half-blood prince', 'Fantasy', 451, 'book'),
+      (2222, 'The sixth one', 'Rowling', 'The half-blood prince', 'Fantasy', 451, 'book'),
    (1888, 'The seventh one', 'Rowling', 'The deathly hallows', 'Fantasy', 751, 'book');
 
 INSERT INTO media_images(id, image_type, photographer, title, resolution, file_format)
@@ -839,7 +990,7 @@ INSERT INTO tags (tag_id, tag_name)
 VALUES (199, 'Mafia'), (222, 'Magic'), (333, 'Masterpiece');
 
 INSERT INTO media_tags (media_id, tag_id)
-VALUES (222, 199), (333, 222), (333, 333);
+VALUES (2222, 199), (3333, 222), (3333, 333);
 
 INSERT INTO user_media (media_id, user_id)
-VALUES (222, 199), (333, 201), (222, 201);
+VALUES (2222, 199), (3333, 201), (2222, 201);

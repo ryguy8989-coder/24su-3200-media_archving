@@ -51,7 +51,7 @@ if st.button('Find Top 10 Tags',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/23_Trending_Tags.py')
-
+  
 if st.button('Update Tag', 
              type='primary',
              use_container_width=True):
@@ -61,4 +61,23 @@ if st.button('Delete Tag',
              type='primary',
              use_container_width=True):
   st.switch_page('pages/23_Delete_Tag.py')
+
+
+if st.button('Insert New Video', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/25_Insert_New_Video.py')
+
+
+if st.button('Insert New Literature', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/26_Insert_New_Literature.py')
+
+if st.button('Insert New Image', 
+             type='primary',
+             use_container_width=True):
+  st.switch_page('pages/27_Insert_New_Image.py')
+
+
  
