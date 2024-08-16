@@ -9,6 +9,7 @@ SideBarLinks()
 
 
 with st.form("Find Videos by Genre"):
+    st.write("## Find Videos based on Genre")
     search_genre = st.text_input("Input Video Genre:")
 
     submitted = st.form_submit_button("Search")

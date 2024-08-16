@@ -71,7 +71,9 @@ def create_new_image():
         db.get_db().commit()
         cursor.close()
         return jsonify({'message': 'Media image added successfully'}), 201
-
+    except Exception as e:
+        current_app.logger.error(f'Error finding media image: {e}')
+        return jsonify({'error': 'An error occurred while updating media image'}), 500
 
 # Route for admin to update existing media image
 @images.route('/images/<int:id>', methods=['PUT'])
