@@ -13,9 +13,6 @@ def AboutPageNav():
 def MovEnjoyHomeNav():
     st.sidebar.page_link("pages/00_Mov_Enjoy_Home.py", label="Movie Enjoyer Home", icon='👤')
 
-#def WorldBankVizNav():
-#    st.sidebar.page_link("pages/01_World_Bank_Viz.py", label="World Bank Visualization", icon='🏦')
-
 def SearchWithGenreNav():
     st.sidebar.page_link("pages/06_Search_Genre.py", label="Find Videos with Genre", icon='🗺️')
 
@@ -90,7 +87,6 @@ def SideBarLinks(show_home=False):
         # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
         if st.session_state['role'] == 'movie_enjoyer':
             MovEnjoyHomeNav()
-            #WorldBankVizNav()
             NewTagNav()
             SearchWithGenreNav()
             UpdateTagNav()
@@ -99,21 +95,18 @@ def SideBarLinks(show_home=False):
         if st.session_state['role'] == 'book_enjoyer':
          #   PredictionNav()
             ApiTestNav() 
-            #NewTagNav()
             FindLiteratureWithTagNav()
             UpdateTagNav()
         
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state['role'] == 'administrator':
             AdminPageNav()
-            #NewTagNav()
             UpdateTagNav()
             DeleteTagNav()
 
         # If the user is an journalist, give them access to the journalist pages
         if st.session_state['role'] == 'journalist':
             JournalistPageNav()
-            #NewTagNav()
             UpdateTagNav()
             #DeleteTagNav()
 
