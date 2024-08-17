@@ -1,7 +1,8 @@
 # Summer 2024 CS 3200 Project Template Repository
 
 ## Project Name: Media Archiving
-## Team Members: Ryan Jiang, Hersh Joshi, Martin Celo, Moses Yawe, Santiago Arango
+## Team Members: Ryan Jiang (ryguy8989-coder), Hersh Joshi (hershjoshii), Martin Celo (Cajmali), Moses Yawe (mosyawe1), Santiago Arango(LuchotheCat)
+
 
 
 ## About
@@ -10,7 +11,8 @@ The Media Archive application has the goal of providing a centralized location f
 
 To achieve our goals of accessible media– books, movies, articles, and images– we organized our data into three main categories: media, videos, and images. Each of these categories all revolve around a common attribute: tags. These tables are as such broken into separate tables, or relations, where there is a certain amount of criteria, its respective attributes, in each of these categories to be met that can identify its value and henceforth make it useful for any users of our app. 
 
-Media
+
+**Relations**
 
 This entity is characterisized by the attributes description, title, genre, ISBN, Page Count, Budget, Publisher, Publication Date, Literature Video Type (book, article, etc), Literature Link for where we can find this piece of writing, and the Author. This relation is mainly characterized by its Media ID, since this category value cannot be repeated for any two different pieces of literature. Similarly, the Media Video relation, and the Media Images relations are also described by their Media_ID attribute. 
 
