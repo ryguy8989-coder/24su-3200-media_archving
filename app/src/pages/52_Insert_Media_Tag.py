@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 
+st.write("# Add a Tag to a Piece of Media")
 st.write("Current Images:")
 def fetch_and_display_image():
     try:
