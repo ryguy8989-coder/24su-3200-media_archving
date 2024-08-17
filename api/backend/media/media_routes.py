@@ -77,6 +77,32 @@ def create_literature():
 
     return jsonify({"message": "Literature created successfully!"}), 201
 
+# Route for admin to create new media image
+@media.route('/images', methods=['POST'])
+def create_new_image():
+    try:
+        data = request.get_json()
+        id = data.get('id')
+        image_type = data.get('image_type')
+        image_link = data.get('image_link')
+        photographer = data.get('photographer')
+        title = data.get('title')
+        description = data.get('description')
+        if not image_type or not image_link or not photographer or not title or not description:
+            return jsonify({'error': 'Missing required fields'}), 400
+        cursor = db.get_db().cursor()
+        query = """
+            INSERT INTO media_images (id, image_type, image_link, photographer, title, description)
+            VALUES (%s, %s, %s, %s, %s)
+        """
+        cursor.execute(query, (id, image_type, image_link, photographer, title, description))
+        db.get_db().commit()
+        cursor.close()
+        return jsonify({'message': 'Media image added successfully'}), 201
+    except Exception as e:
+        current_app.logger.error(f'Error finding media image: {e}')
+        return jsonify({'error': 'An error occurred while updating media image'}), 500
+
 
 #method to add media to users in bridge table
 @media.route('/user_media', methods=['POST'])

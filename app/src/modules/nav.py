@@ -115,7 +115,7 @@ def SideBarLinks(show_home=False):
             JournalistPageNav()
             #NewTagNav()
             UpdateTagNav()
-            DeleteTagNav()
+            #DeleteTagNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
