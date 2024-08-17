@@ -26,7 +26,7 @@ Two more smaller components to this app include the Users and Tags. The Users re
 Clone this repository to your device, type docker compose up -d in your terminal, then type localhost:8501 in your browser
 
 
-https://northeastern-my.sharepoint.com/:v:/g/personal/jiang_ry_northeastern_edu/EUM-OfgIp4pLvTnrFHSLpw0BNY6LSdxQBng3e3_AcsYg1Q?e=K0dv66&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+Link to Video: CS3200-20240817_003231-Meeting Recording.mp4
 
 
 
