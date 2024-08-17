@@ -26,7 +26,7 @@ Two more smaller components to this app include the Users and Tags. The Users re
 Clone this repository to your device, type docker compose up -d in your terminal, then type localhost:8501 in your browser
 
 
-Link to Video: CS3200-20240817_003231-Meeting Recording.mp4
+Link to Video: https://drive.google.com/file/d/1kNKKPa5JKZTMFgcW3jf1HzBIbw4flFEc/view?usp=sharing
 
 
 
