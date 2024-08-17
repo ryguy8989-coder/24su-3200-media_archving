@@ -55,3 +55,35 @@ def get_all_videos():
     the_response.mimetype = 'application/json'
     return the_response
 
+
+
+# Get all Media IDs
+@find_media.route('/media_ids', methods=['GET'])
+def get_all_media_ids():
+    cursor = db.get_db().cursor()
+    query = '''
+     SELECT media_id FROM media   
+'''
+    cursor.execute(query)
+    theData = cursor.fetchall()
+    the_response = make_response(theData)
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
+
+
+# Make route
+@find_media.route('/media_tags', methods=['GET'])
+def get_all_media_tags():
+    cursor = db.get_db().cursor()
+    query = '''
+     SELECT * FROM media_tags 
+
+'''
+    cursor.execute(query)
+    theData = cursor.fetchall()
+    the_response = make_response(theData)
+    the_response.status_code = 200
+    the_response.mimetype = 'application/json'
+    return the_response
+

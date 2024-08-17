@@ -78,38 +78,6 @@ def create_literature():
     return jsonify({"message": "Literature created successfully!"}), 201
 
 
-# Get all Media IDs
-@media.route('/media_ids', methods=['GET'])
-def get_all_media_ids():
-    cursor = db.get_db().cursor()
-    query = '''
-     SELECT media_id FROM media   
-'''
-    cursor.execute(query)
-    theData = cursor.fetchall()
-    the_response = make_response(theData)
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
-
-# make blueprint object
-media_tags= Blueprint('media_tags', __name__)
-
-# Make route
-@media.route('/media_tags', methods=['GET'])
-def get_all_media_tags():
-    cursor = db.get_db().cursor()
-    query = '''
-     SELECT * FROM media_tags 
-
-'''
-    cursor.execute(query)
-    theData = cursor.fetchall()
-    the_response = make_response(theData)
-    the_response.status_code = 200
-    the_response.mimetype = 'application/json'
-    return the_response
-
 #method to add media to users in bridge table
 @media.route('/user_media', methods=['POST'])
 def add_user_media():
