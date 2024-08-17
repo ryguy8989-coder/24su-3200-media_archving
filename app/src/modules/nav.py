@@ -32,8 +32,8 @@ def ApiTestNav():
 def NewTagNav():
     st.sidebar.page_link("pages/14_Create_New_Tag.py",label="Add a New Tag", icon='🖥️')
 
-def FindLiteratureWithGenreNav():
-    st.sidebar.page_link("pages/13_Find_Literature.py", label="Find Literature with Genre", icon='🖥️')
+def FindLiteratureWithTagNav():
+    st.sidebar.page_link("pages/13_Find_Literature.py", label="Find Literature with Tag", icon='🖥️')
 
 
 
@@ -100,7 +100,7 @@ def SideBarLinks(show_home=False):
          #   PredictionNav()
             ApiTestNav() 
             #NewTagNav()
-            FindLiteratureWithGenreNav()
+            FindLiteratureWithTagNav()
             UpdateTagNav()
         
         # If the user is an administrator, give them access to the administrator pages
