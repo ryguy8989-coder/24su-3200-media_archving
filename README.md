@@ -23,9 +23,9 @@ Whenever a particular user frequently references a specific type of visual conte
 Two more smaller components to this app include the Users and Tags. The Users relation on this app only consists of the User ID and Media ID, both of which contain values that uniquely identify each row in a table. With this table the amount of users can be changed as per needed. These users then have power to create, delete of modify the tags in this app. This tags table is characterized by TagID and the TagName, where the uniquely identifiable column is the TagID. Together, all these components make up this media archiving app.
 
 ## How to View The App:
--Clone this repository to your device
--Type docker compose up -d in your terminal
--Type localhost:8501 in your browser
+Clone this repository to your device
+Type docker compose up -d in your terminal
+Type localhost:8501 in your browser
 
 
 
